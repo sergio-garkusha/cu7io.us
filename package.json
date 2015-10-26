@@ -1,13 +1,13 @@
 {
   "name": "cu7io.us",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Personal website of the web professional",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "CU7IOUS",
-  "license": "ISC",
+  "author": "Cu7ious",
+  "license": "GPLv.3+",
   "devDependencies": {
     "express": "^4.13.3",
     "grunt": "^0.4.5",

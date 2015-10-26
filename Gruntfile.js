@@ -115,9 +115,9 @@ module.exports = function(grunt) {
   });
 
   // Load plugins that provides tasks.
+  grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-string-replace');
 
