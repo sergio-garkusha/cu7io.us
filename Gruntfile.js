@@ -6,10 +6,7 @@ module.exports = function(grunt) {
     uncss: {
       dist: {
         files: {
-          'assets/css/style.css': ['index.html'],
-          'assets/css/gumby.css': ['index.html'],
-          'assets/css/media-queries.css': ['index.html'],
-          'assets/css/elementTransitions.css': ['index.html'],
+          'dist/build.css': ['index.html'],
         }
       }
     },
@@ -19,10 +16,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'dist/build.min.css': [
-            'assets/css/style.css',
-            'assets/css/gumby.css',
-            'assets/css/media-queries.css',
-            'assets/css/elementTransitions.css',
+            'dist/build.css'
           ]
         }
       }
