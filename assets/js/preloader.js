@@ -5,7 +5,7 @@ jQuery(window).load(function() {
   var headerImage = jQuery('#headerImage');
   var src = headerImage.attr('src');
 
-  header.css({'background-image': 'url(' + window.location.href + src + ')'});
+  header.css({'background-image': 'url(' + window.location.origin + '/' + src + ')'});
   headerImage.remove();
 
   preload.find('h1').slideToggle(900);

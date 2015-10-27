@@ -312,22 +312,27 @@
     letter-spacing: 1px;
   }
 }
-@media screen and (max-width: 898px) and (min-width: 768px) {
+
+/*@media screen and (max-width: 898px) and (min-width: 768px) {
   #huge-title h1 {
     font-size: 32px;
     line-height: 46px;
     letter-spacing: 2px
   }
-}
+}*/
+
 @media screen and (max-width: 600px) {
+  #huge-title h1 {
+    font-size: 32px;
+  }
+  #go-down {
+    display: none;
+  }
   #logo-footer {
     margin-top: -70px;
   }
 }
 @media screen and (max-width: 500px) {
-  #huge-title h1 {
-    font-size: 32px;
-  }
   #footer-sticky .nav {
     float: none;
     width: 255px;

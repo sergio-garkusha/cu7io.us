@@ -47,6 +47,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+strong {
+  font-weight: bold !important;
+}
+i {
+  font-style: italic !important;
+}
 
 /* 02. GENERALS SETTINGS ================================================== */
 
@@ -123,9 +129,9 @@ body h1 {
 body h2 {
   font-size: 36px;
   font-weight: 100;
-  line-height: 46px;
+  line-height: 1.5;
   font-family: 'Source Sans Pro', sans-serif;
-  margin-top: 0.33em;
+  /*margin-top: 0.2em;*/
   text-align: center;
   padding-bottom: 48px;
 }
@@ -739,17 +745,16 @@ body .et-page-current {
 .news_home {
   background: #F4F4F4;
 }
-#footer {
-  padding: 70px 0;
+#content {
+  padding: 48px 0 200px;
   /*background: #1e1f20;*/
-  font-size: 68.5%;
-  font-weight: 800;
 }
-#footer p {
-  font: 16px 'Source Sans Pro', sans-serif;
-  margin-bottom: 14px;
+#content p {
+  font: 18px 'Source Sans Pro', sans-serif;
+  margin-bottom: 27px;
+  line-height: 1.5;
 }
-#wrapper #footer a {
+#wrapper #content a {
   color: #FFF;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -757,7 +762,7 @@ body .et-page-current {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-#footer a:hover {
+#content a:hover {
   color: #fff;
 }
 #logo-footer {
@@ -818,20 +823,23 @@ body .et-page-current {
   background-position: center 18px;
 }
 .auto-scrolling {
-  overflow-y: scroll;
-  /*padding-bottom: 150px;*/
+  max-width: 600px;
+  margin: 0 auto;
 }
 #menu-home {
   display: none;
 }
 .circles {
   margin-top: 20px !important;
+  overflow: hidden;
+  width: 100%;
 }
 .circle {
   position: relative;
   text-align: center;
   margin: 0 auto;
   width: 100px;
+  padding-bottom: 65px;
   min-height: 135px;
 }
 .circle strong {
@@ -933,3 +941,56 @@ body .et-page-current {
   border-color: transparent transparent rgba(255, 255, 255, 0.25);
   border-radius: 100%;
 }
+.image.photo {
+  margin-bottom: 45px;
+}
+.get-in-touch {
+  text-align: center;
+}
+.get-in-touch h4 {}
+.get-in-touch a {
+  display: inline-block;
+  color: #000 !important;
+  margin: 0 10px;
+}
+.get-in-touch a::after {
+  display: block;
+  width: 0;
+  margin: 0 auto;
+  height: 1px;
+  background-color: #000;
+  content: "";
+  transition: width 0.2s;
+}
+.get-in-touch a:hover::after {
+  width: 100%;
+}
+
+/* -------------------------------------------------------------------------- */
+
+
+/* ------------------------    BASELINE CHECKER    -------------------------- */
+
+
+/* -------------------------------------------------------------------------- */
+
+
+/*
+#content:after {
+  position: absolute;
+  width: auto;
+  height: auto;
+  z-index: 9999;
+  content: '';
+  display: block;
+  pointer-events: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url('http://basehold.it/image.php?height=27') repeat top left;
+}
+
+#content:active:after {
+  display: none;
+}*/
