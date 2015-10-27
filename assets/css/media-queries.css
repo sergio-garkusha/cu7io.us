@@ -11,7 +11,7 @@
   #footer .text-right {
     text-align: center;
   }
-  .logo-footer {
+  #logo-footer {
     display: none;
   }
 }
@@ -300,8 +300,10 @@
   #footer .text-right {
     text-align: center;
   }
-  #footer .logo-footer {
+  #logo-footer {
     margin-top: -170px;
+    background: linear-gradient(135deg, rgba(32, 152, 132, 0.7) 0%, rgba(98, 40, 140, 0.7) 100%);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.9);
   }
   #main .method .section-content {
     width: 80%;

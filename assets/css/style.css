@@ -766,11 +766,11 @@ body .et-page-current {
   color: #fff;
 }
 #logo-footer {
-  background-color: rgba(0, 0, 0, 0.3);
-  /*background-color: #434547;*/
-  /*background: linear-gradient(135deg, rgba(98, 40, 140, 0.9) 0%, rgba(44, 116, 164, 0.95) 50%, rgba(32, 152, 132, 0.9) 100%)*/
   background-repeat: no-repeat;
   border-radius: 48px;
+  border-color: #fff;
+  border-width: 1px;
+  border-style: solid;
   position: absolute;
   width: 48px;
   height: 48px;
@@ -780,7 +780,6 @@ body .et-page-current {
   left: 0;
   margin-top: 15px;
   display: none;
-  transition: background-color 0.6s linear;
 }
 #logo-footer a {
   width: 100%;
@@ -788,17 +787,15 @@ body .et-page-current {
   display: block;
 }
 #logo-footer:hover {
-  background-color: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(135deg, rgba(32, 152, 132, 0.7) 0%, rgba(98, 40, 140, 0.7) 100%);
 }
 #footer-sticky {
   width: 100%;
-  /*background-color: #1e1f20;*/
   /*background-color: #434547;*/
   background: linear-gradient(135deg, rgba(98, 40, 140, 0.9) 0%, rgba(44, 116, 164, 0.9) 50%, rgba(32, 152, 132, 0.9) 100%);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   position: fixed;
   bottom: 0;
-  /*display: none;*/
 }
 #footer-sticky .nav {
   float: left;
@@ -820,7 +817,7 @@ body .et-page-current {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAXCAYAAACWEGYrAAAAAXNSR0IArs4c6QAAAihJREFUSA3Fl8srRVEUxu/xzCOSklIGMiATZaKMlBFhJGZkKobE1GPqMcUU06tMmHnM/AWMjEwYKIrE8ftuayfXwXnda9XX2mfvb33fsu8+D5lMiuH7fiM4NTSkKJ2OFI3Vg0vg4pxBVTrqKajQTA1QU4orcJMb+X6WXJqCRTIJmqgEJ9aUmmsFHeDO5naSOSSspokycGjN3JLbnSTjXvBkaytuvqgZ8xJwYE1o17ryG2BuELwaZyZ/vaDXmHpg18wfyD0/GbI2abw38thPvNTnMdsy40dy318GcOaN/0Lu/4ufeB2TNTN8Jg+EFYS7bnXa+e6wdZF5iC+Zkc7ZcBQB+Doie1avm6wtSn0oLqJzZqCzNR6qKI9EXTk4Np1rclMeJf4lYtPg3TAdXymTQaMWuDeTcm0SvVwtIhNAu6eYTSyIADpNQDup0M5WxNaleAS459xibKGAQnTbgM6mQmfVC6D9PkXRANAdrFj9nR1vFd1uoLtdsRFJhYI+4F5pm5GKI5Lx6QduMxZClVPQA9xfp7dK9J8hlNMnCY8x4M791OdKwAhiF9B7WLEPSgJoBZnCa0amhO6BoUATFtqBO8hZxmWBxAJO4rkMFDpqvV+smNA3oL4FFSeg8guhiBd4b6sJ4h505qwZNINroNDXdXURe/pmhX8p0C+p0Ma16MF6oStCT/+6b1X/MEEfVeAMKC700j+ij3ow6nne/T/0FGhJX/pv8xA8fACWpaQ5kFK/RwAAAABJRU5ErkJggg==');
   background-repeat: no-repeat;
   background-size: 20px;
-  background-position: center 18px;
+  background-position: center 17px;
 }
 .auto-scrolling {
   max-width: 600px;
