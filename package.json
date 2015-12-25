@@ -2,9 +2,9 @@
   "name": "cu7io.us",
   "version": "0.0.1",
   "description": "Personal website of the web professional",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "node server.js"
   },
   "author": "Cu7ious",
   "license": "GPLv.3+",
@@ -19,4 +19,3 @@
     "grunt-uncss": "^0.4.3"
   }
 }
-
