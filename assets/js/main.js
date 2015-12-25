@@ -1,7 +1,8 @@
-jQuery(function ($) {
+document.addEventListener("DOMContentLoaded", function () {
 
   "use strict";
 
+  // Header Scroll Animation
   YUI().use('node', function (Y) {
     Y.on('domready', function () {
 
@@ -10,24 +11,37 @@ jQuery(function ($) {
         i = 0;
 
       Y.on('scroll', function () {
+
         if (scrolling === false) {
           fade();
         }
 
         scrolling = true;
+
         setTimeout(function () {
           scrolling = false;
           fade();
         }, 0);
-
       });
 
       function fade() {
+
         lastScroll = window.scrollY;
+
         Y.one('#huge-title').setStyles({
           'transform': 'translate3d(0,' + Math.round(lastScroll / 2) + 'px,0)',
           'opacity': (100 - lastScroll / 4) / 100
         });
+
+        Y.one('#logo-large-screens').setStyles({
+          'transform': 'translate3d(0,' + Math.round(lastScroll / 8) + 'px,0)',
+          'opacity': (100 - lastScroll / 4) / 100
+        });
+
+        Y.one('#go-down').setStyles({
+          'opacity': (100 - lastScroll / 4) / 100
+        });
+
         if (scrolling === true) {
           window.requestAnimationFrame(fade);
         }
@@ -35,18 +49,29 @@ jQuery(function ($) {
 
     });
   });
+  // Header Scroll Animation END
 
-  var divHeight = jQuery('.height-block').height();
-  jQuery('#huge-title').css('min-height', (divHeight + 100) + 'px');
+  var hugeTitle = document.getElementById('huge-title');
+  var divHeight = hugeTitle.childNodes[1].offsetHeight;
+  hugeTitle.style.minHeight = (divHeight + 100) + 'px';
 
   function setHeight(el) {
-    var height = jQuery(window).outerHeight();
-    var header = jQuery(el);
+    var height = document.body.offsetHeight;
 
-    header.css({
-      height: height,
-      maxHeight: height,
-    });
+    el.style.height = height + 'px';
+    el.style.maxHeight = height + 'px';
+  }
+
+  function scrollTo(element, to, duration) {
+    if (duration <= 0) return;
+    var difference = to - element.scrollTop;
+    var perTick = difference / duration * 10;
+
+    setTimeout(function () {
+      element.scrollTop = element.scrollTop + perTick;
+      if (element.scrollTop === to) return;
+      scrollTo(element, to, duration - 10);
+    }, 10);
   }
 
   function initCircles() {
@@ -63,30 +88,33 @@ jQuery(function ($) {
   var counter = 0;
   var height;
   var trigger = 80; // size of the footer
+  var header = document.getElementById('header');
+  var cotnentTop = document.getElementById('content').getBoundingClientRect().top;
 
-  setHeight('#header');
-  if (jQuery(window).scrollTop() > jQuery("#content").offset().top) {
+  setHeight(header);
+
+  if (window.scrollY > cotnentTop) {
     initCircles();
     progressSetter = true;
   }
 
-  jQuery(window).on('resize', function (e) {
+  window.addEventListener("resize", function (e) {
     setTimeout(function () {
-      setHeight('#header');
+      setHeight(header);
     }, 200);
   })
 
-  .on('scroll', function () {
+  window.addEventListener("resize", function () {
 
     var FOOTER_APPEARS = 400;
-    var position = jQuery(this).scrollTop();
+    var position = window.scrollY;
+    // var position = jQuery(this).scrollTop();
     var opacity = jQuery('#huge-title').css('opacity');
     var goDown = jQuery('#go-down');
     var footer = jQuery('#footer-sticky');
     var fLogo = jQuery('#logo-footer');
-    var logo = jQuery('#logo').parent().parent();
 
-    height = $(window.document).height() - $(window).height();
+    height = jQuery(window.document).height() - jQuery(window).height();
 
     if (position > lastScrollTop) {
       // downscroll code
@@ -99,7 +127,6 @@ jQuery(function ($) {
 
       if (opacity < 0.3) {
         goDown.fadeOut();
-        logo.fadeOut();
       }
 
       setTimeout(function () {
@@ -130,14 +157,12 @@ jQuery(function ($) {
 
       if (opacity > 0.4) {
         goDown.fadeIn();
-        logo.fadeIn();
       }
 
       setTimeout(function () {
         if (position === 0) {
           jQuery("#menu-home").hide();
           jQuery("#menu-about").show();
-          logo.fadeIn();
           footer.slideDown();
         }
 
@@ -152,18 +177,25 @@ jQuery(function ($) {
     lastScrollTop = position;
   });
 
-  jQuery('.go-down-event').on('click', function (e) {
-    e.preventDefault();
-    jQuery(document.body).animate({
-      scrollTop: jQuery("#content").offset().top
-    }, 1000);
+  // Animate Scrollig to content on click on the elements
+  var goDownElements = document.getElementsByClassName('go-down-event');
+  goDownElements = Array.prototype.slice.call(goDownElements);
+  goDownElements.forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      var cotnentTop = document.getElementById('content').getBoundingClientRect().top;
+      scrollTo(document.body, cotnentTop, 800);
+    });
   });
 
-  jQuery('.go-up-event').on('click', function (e) {
-    e.preventDefault();
-    jQuery(document.body).animate({
-      scrollTop: 0
-    }, 1000);
+  // Animate Scrolling to top on click on the elements
+  var goDownElements = document.getElementsByClassName('go-up-event');
+  goDownElements = Array.prototype.slice.call(goDownElements);
+  goDownElements.forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      scrollTo(document.body, 0, 1000);
+    });
   });
 
 });

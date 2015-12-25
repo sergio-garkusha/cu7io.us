@@ -7,14 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
 
-  <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-  <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-  <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-  <!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
-  <!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
-  <!--[if gt IE 9]><!-->
-  <!--<![endif]-->
-
   <title>Cu7ious :: The Tasty Website Templates</title>
 
   <link rel="stylesheet" href="./assets/css/style.css" type="text/css" media="all">
@@ -31,13 +23,16 @@
 
   <script>
     (function() {
+
       var preloaderHTML = [];
+
       preloaderHTML.push('<div id="preloader-stage">');
       preloaderHTML.push('<div class="preloader-inner-wrapper">');
       preloaderHTML.push('<h1>Cu7ious</h1>');
       preloaderHTML.push('<div class="multi">');
       preloaderHTML.push('<div></div>');
       preloaderHTML.push('</div></div></div>');
+      
       document.body.insertAdjacentHTML('afterbegin', preloaderHTML.join(''));
     })();
 
@@ -48,7 +43,7 @@
     <div class="cbp-af-header">
       <nav class="row">
         <div id="logo" class="clearfix">
-          <h1 class="logo-text">
+          <h1 id="logo-large-screens" class="logo-text">
             <a href="/" title="Cu7io.us">Cu7ious</a>
           </h1>
         </div>
