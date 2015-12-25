@@ -3,63 +3,56 @@ document.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
   // Header Scroll Animation
-  YUI().use('node', function (Y) {
-    Y.on('domready', function () {
+  var scrolling = false;
+  var lastScroll;
+  var heroTitle = document.getElementById('huge-title');
+  var mainLogo = document.getElementById('logo-large-screens');
+  var goDownButton = document.getElementById('go-down');
 
-      var scrolling = false,
-        lastScroll,
-        i = 0;
+  window.addEventListener('scroll', function () {
 
-      Y.on('scroll', function () {
+    if (scrolling === false) {
+      fade();
+    }
 
-        if (scrolling === false) {
-          fade();
-        }
+    scrolling = true;
 
-        scrolling = true;
+    setTimeout(function () {
+      scrolling = false;
+      fade();
+    }, 0);
 
-        setTimeout(function () {
-          scrolling = false;
-          fade();
-        }, 0);
-      });
-
-      function fade() {
-
-        lastScroll = window.scrollY;
-
-        Y.one('#huge-title').setStyles({
-          'transform': 'translate3d(0,' + Math.round(lastScroll / 2) + 'px,0)',
-          'opacity': (100 - lastScroll / 4) / 100
-        });
-
-        Y.one('#logo-large-screens').setStyles({
-          'transform': 'translate3d(0,' + Math.round(lastScroll / 8) + 'px,0)',
-          'opacity': (100 - lastScroll / 4) / 100
-        });
-
-        Y.one('#go-down').setStyles({
-          'opacity': (100 - lastScroll / 4) / 100
-        });
-
-        if (scrolling === true) {
-          window.requestAnimationFrame(fade);
-        }
-      }
-
-    });
   });
+
+  function fade() {
+
+    lastScroll = window.scrollY;
+
+    heroTitle.style.transform = 'translate3d(0,' + Math.round(lastScroll / 2) + 'px,0)';
+    heroTitle.style.opacity = (100 - lastScroll / 4) / 100;
+
+    mainLogo.style.transform = 'translate3d(0,' + Math.round(lastScroll / 14) + 'px,0)';
+    mainLogo.style.opacity = (100 - lastScroll / 4) / 100;
+
+    goDownButton.style.opacity = (100 - lastScroll / 4) / 100;
+
+    if (scrolling === true) {
+      window.requestAnimationFrame(fade);
+    }
+  }
+  // });
   // Header Scroll Animation END
+
 
   var hugeTitle = document.getElementById('huge-title');
   var divHeight = hugeTitle.childNodes[1].offsetHeight;
   hugeTitle.style.minHeight = (divHeight + 100) + 'px';
 
   function setHeight(el) {
-    var height = document.body.offsetHeight;
+    var elHeight = document.body.offsetHeight;
 
-    el.style.height = height + 'px';
-    el.style.maxHeight = height + 'px';
+    el.style.height = elHeight + 'px';
+    el.style.maxHeight = elHeight + 'px';
   }
 
   function scrollTo(element, to, duration) {
@@ -109,31 +102,29 @@ document.addEventListener("DOMContentLoaded", function () {
     var FOOTER_APPEARS = 400;
     var position = window.scrollY;
     // var position = jQuery(this).scrollTop();
-    var opacity = jQuery('#huge-title').css('opacity');
-    var goDown = jQuery('#go-down');
-    var footer = jQuery('#footer-sticky');
-    var fLogo = jQuery('#logo-footer');
+    var footer = document.getElementById('footer-sticky');
+    // var footer = jQuery('#footer-sticky');
+    var footerLogo = document.getElementById('logo-footer');
+    // var footerLogo = jQuery('#logo-footer');
 
-    height = jQuery(window.document).height() - jQuery(window).height();
+    // height = jQuery(window.document).height() - jQuery(window).height();
+    height = document.body.scrollHeight - document.body.offsetHeight;
 
     if (position > lastScrollTop) {
       // downscroll code
       if (position > height - trigger) {
         footer.slideDown();
-        fLogo.fadeIn();
+        footerLogo.fadeIn();
       } else {
         footer.slideUp();
       }
 
-      if (opacity < 0.3) {
-        goDown.fadeOut();
-      }
-
       setTimeout(function () {
-        jQuery("#menu-about").hide();
-        jQuery("#menu-home").show();
+        // jQuery("#menu-about").hide();
+        // jQuery("#menu-home").show();
 
-        var footerOffset = footer.offset().top;
+        var footerOffset = footer.getBoundingClientRect().top;
+        // var footerOffset = footer.offset().top;
 
         if (counter === 0) {
           if (position + FOOTER_APPEARS > footerOffset) {
@@ -152,18 +143,14 @@ document.addEventListener("DOMContentLoaded", function () {
       // console.log('down');
     } else {
       // upscroll code
-      footer.slideUp();
-      fLogo.fadeOut();
-
-      if (opacity > 0.4) {
-        goDown.fadeIn();
-      }
+      // footer.slideUp();
+      // footerLogo.fadeOut();
 
       setTimeout(function () {
         if (position === 0) {
-          jQuery("#menu-home").hide();
-          jQuery("#menu-about").show();
-          footer.slideDown();
+          // jQuery("#menu-home").hide();
+          // jQuery("#menu-about").show();
+          // footer.slideDown();
         }
 
         setTimeout(function () {
