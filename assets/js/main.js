@@ -2,28 +2,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   "use strict";
 
-  // Header Scroll Animation
+  var FOOTER_APPEARS = 400;
+  var TRIGGER = 80; // size of the footer
+
   var scrolling = false;
   var lastScroll;
+
   var heroTitle = document.getElementById('huge-title');
   var mainLogo = document.getElementById('logo-large-screens');
   var goDownButton = document.getElementById('go-down');
 
-  window.addEventListener('scroll', function () {
+  var highColor = 'rgb(98, 40, 140)';
+  var lowColor = 'rgb(32, 152, 132)';
 
-    if (scrolling === false) {
-      fade();
-    }
+  var lastScrollTop = 0;
+  var progressSetter = false;
+  var counter = 0;
+  var height;
+  var header = document.getElementById('header');
+  var cotnentTop = document.getElementById('content').getBoundingClientRect().top;
 
-    scrolling = true;
+  var footer = document.getElementById('footer-sticky');
+  var footerLogo = document.getElementById('logo-footer');
+  var menuHome = document.getElementById('menu-home');
+  var menuAbout = document.getElementById('menu-about');
 
-    setTimeout(function () {
-      scrolling = false;
-      fade();
-    }, 0);
 
-  });
-
+  // Utils
   function fade() {
 
     lastScroll = window.scrollY;
@@ -40,17 +45,16 @@ document.addEventListener("DOMContentLoaded", function () {
       window.requestAnimationFrame(fade);
     }
   }
-  // });
-  // Header Scroll Animation END
 
-
-  var hugeTitle = document.getElementById('huge-title');
-  var divHeight = hugeTitle.childNodes[1].offsetHeight;
-  hugeTitle.style.minHeight = (divHeight + 100) + 'px';
+  function initCircles() {
+    makeCircle('container1', 0.95, highColor);
+    makeCircle('container2', 0.80, highColor);
+    makeCircle('container3', 0.70, lowColor);
+    makeCircle('container4', 0.30, lowColor);
+  }
 
   function setHeight(el) {
     var elHeight = document.body.offsetHeight;
-
     el.style.height = elHeight + 'px';
     el.style.maxHeight = elHeight + 'px';
   }
@@ -67,22 +71,47 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 10);
   }
 
-  function initCircles() {
-    jQuery('.circle').circleProgress({
-        animationStartValue: 0
-      })
-      .on('circle-animation-progress', function (event, progress, stepValue) {
-        jQuery(this).find('strong').text(String(stepValue.toFixed(2)).substr(2) + '%');
-      });
-  }
+  function makeCircle(DOMel, qty, color) {
+    var element = document.getElementById(DOMel);
+    var circle = new ProgressBar.Circle(element, {
+      color: color,
+      trailColor: '#e6e6e6',
+      trailWidth: 2,
+      duration: 2000,
+      easing: 'easeOut',
+      strokeWidth: 4,
+      text: {
+        value: '0'
+      },
 
-  var lastScrollTop = 0;
-  var progressSetter = false;
-  var counter = 0;
-  var height;
-  var trigger = 80; // size of the footer
-  var header = document.getElementById('header');
-  var cotnentTop = document.getElementById('content').getBoundingClientRect().top;
+      // Set default step function for all animate calls
+      step: function (state, circle) {
+        circle.setText((circle.value() * 100).toFixed(0));
+      }
+    });
+
+    circle.animate(qty);
+  }
+  // Utils END
+
+
+  window.addEventListener('scroll', function () {
+
+    if (scrolling === false) {
+      fade();
+    }
+
+    scrolling = true;
+
+    setTimeout(function () {
+      scrolling = false;
+      fade();
+    }, 0);
+
+  });
+
+  // Executions block
+  heroTitle.style.minHeight = (heroTitle.childNodes[1].offsetHeight + 100) + 'px';
 
   setHeight(header);
 
@@ -91,40 +120,31 @@ document.addEventListener("DOMContentLoaded", function () {
     progressSetter = true;
   }
 
-  window.addEventListener("resize", function (e) {
+  window.addEventListener("resize", function () {
     setTimeout(function () {
       setHeight(header);
     }, 200);
   })
 
-  window.addEventListener("resize", function () {
-
-    var FOOTER_APPEARS = 400;
+  window.addEventListener("scroll", function () {
     var position = window.scrollY;
-    // var position = jQuery(this).scrollTop();
-    var footer = document.getElementById('footer-sticky');
-    // var footer = jQuery('#footer-sticky');
-    var footerLogo = document.getElementById('logo-footer');
-    // var footerLogo = jQuery('#logo-footer');
 
-    // height = jQuery(window.document).height() - jQuery(window).height();
     height = document.body.scrollHeight - document.body.offsetHeight;
 
     if (position > lastScrollTop) {
       // downscroll code
-      if (position > height - trigger) {
-        footer.slideDown();
-        footerLogo.fadeIn();
+      if (position > height - TRIGGER) {
+        footer.classList.remove('footer-closed');
+        footerLogo.style.opacity = '1';
       } else {
-        footer.slideUp();
+        footer.classList.add('footer-closed');
       }
 
       setTimeout(function () {
-        // jQuery("#menu-about").hide();
-        // jQuery("#menu-home").show();
+        menuAbout.style.display = 'none';
+        menuHome.style.display = 'block';
 
         var footerOffset = footer.getBoundingClientRect().top;
-        // var footerOffset = footer.offset().top;
 
         if (counter === 0) {
           if (position + FOOTER_APPEARS > footerOffset) {
@@ -143,14 +163,14 @@ document.addEventListener("DOMContentLoaded", function () {
       // console.log('down');
     } else {
       // upscroll code
-      // footer.slideUp();
-      // footerLogo.fadeOut();
+      footer.classList.add('footer-closed');
+      footerLogo.style.opacity = '0';
 
       setTimeout(function () {
         if (position === 0) {
-          // jQuery("#menu-home").hide();
-          // jQuery("#menu-about").show();
-          // footer.slideDown();
+          menuAbout.style.display = 'block';
+          menuHome.style.display = 'none';
+          footer.classList.remove('footer-closed');
         }
 
         setTimeout(function () {
@@ -164,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
     lastScrollTop = position;
   });
 
-  // Animate Scrollig to content on click on the elements
+  // Animate Scrolling to content on click on the elements
   var goDownElements = document.getElementsByClassName('go-down-event');
   goDownElements = Array.prototype.slice.call(goDownElements);
   goDownElements.forEach(function (el) {
@@ -186,3 +206,5 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
+// Executions block

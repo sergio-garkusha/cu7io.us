@@ -30,11 +30,8 @@ module.exports = function(grunt) {
       my_target: {
         files: {
           'dist/build.min.js': [
-            'assets/js/jquery.js',
             'assets/js/preloader.js',
-            'assets/js/elementTransitions.min.js',
-            'assets/js/yui.js',
-            'assets/js/jquery.circle-progress.js',
+            'assets/js/progressbar.js',
             'assets/js/main.js'
           ]
         }

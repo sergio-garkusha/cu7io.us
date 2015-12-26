@@ -1,17 +1,17 @@
 // Preloader
-jQuery(window).load(function() {
-  var preload = jQuery('#preloader-stage');
-  var header = jQuery('#header');
-  var headerImage = jQuery('#headerImage');
-  var src = headerImage.attr('src');
+window.onload = function () {
+  var preload = document.getElementById('preloader-stage');
+  var header = document.getElementById('header');
+  var headerImage = document.getElementById('headerImage');
+  var src = headerImage.getAttribute('src');
 
-  header.css({'background-image': 'url(' + window.location.origin + '/' + src + ')'});
+  header.style.backgroundImage = 'url(' + window.location.origin + '/' + src + ')';
   headerImage.remove();
 
-  preload.find('h1').slideToggle(900);
-  preload.fadeOut(1200);
-  setTimeout(function() {
+  preload.style.opacity = 0;
+  setTimeout(function () {
     preload.remove();
   }, 1200);
-});
+
+};
 // Preloader END
