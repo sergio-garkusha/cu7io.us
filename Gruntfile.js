@@ -50,8 +50,7 @@ module.exports = function(grunt) {
         command: "rm -f ./assets/css/*.css"
       },
       rm_dev_junk: {
-        command: "rm -f .gitignore && rm -f server.js && rm -f package.json && rm -f Gruntfile.js && rm -rf node_modules"
-        // command: "rm -f .gitignore && rm -f package.json && rm -f Gruntfile.js && rm -rf node_modules"
+        command: "rm -f server.js && rm -f package.json && rm -f Gruntfile.js && rm -rf node_modules"
       },
       mv_dist_files: {
         command: "mv dist/build.min.css assets/css/ && mv dist/build.min.js assets/js/ && rm -rf dist"
