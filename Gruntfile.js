@@ -1,10 +1,13 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   grunt.initConfig({
 
     // remove unused styles
     uncss: {
       dist: {
+        options: {
+          ignore: ['#footer-sticky.footer-closed']
+        },
         files: {
           'dist/build.css': ['index.html'],
         }
@@ -13,14 +16,16 @@ module.exports = function(grunt) {
 
     // concat & min css
     cssmin: {
+      options: {
+        // sourceMap: true
+      },
       dist: {
         files: {
           'dist/build.min.css': [
             'dist/build.css'
           ]
         }
-      },
-      sourceMap: true
+      }
     },
 
     // concat & minify js
