@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var scrolling = false;
   var lastScroll;
 
-  var heroTitle = document.getElementById('huge-title');
+  var heroTitle = document.getElementById('hero-title');
   var mainLogo = document.getElementById('logo-large-screens');
   var goDownButton = document.getElementById('go-down');
 

@@ -50,8 +50,8 @@ module.exports = function(grunt) {
         command: "rm -f ./assets/css/*.css"
       },
       rm_dev_junk: {
-        // command: "rm -f .gitignore && rm -f index.js && rm -f package.json && rm -f Gruntfile.js && rm -rf node_modules"
-        command: "rm -f .gitignore && rm -f package.json && rm -f Gruntfile.js && rm -rf node_modules"
+        command: "rm -f .gitignore && rm -f server.js && rm -f package.json && rm -f Gruntfile.js && rm -rf node_modules"
+        // command: "rm -f .gitignore && rm -f package.json && rm -f Gruntfile.js && rm -rf node_modules"
       },
       mv_dist_files: {
         command: "mv dist/build.min.css assets/css/ && mv dist/build.min.js assets/js/ && rm -rf dist"
@@ -75,25 +75,19 @@ module.exports = function(grunt) {
             pattern: '<link rel="stylesheet" href="./assets/css/media-queries.css" type="text/css" media="screen">',
             replacement: ""
           }, {
-            pattern: '<link rel="stylesheet" href="./assets/css/elementTransitions.css" type="text/css" media="screen">',
+            pattern: '<!-- <link rel="stylesheet" href="./assets/css/elementTransitions.css" type="text/css" media="screen"> -->',
             replacement: ""
           }, {
-            pattern: "<!-- Load the scripts -->",
+            pattern: '<!-- <link rel="stylesheet" href="./assets/css/baseline-checker.css" type="text/css" media="screen"> -->',
+            replacement: ""
+          }, {
+            pattern: "<!-- Load scripts -->",
             replacement: "<!-- Load js -->"
           }, {
-            pattern: '<script type="text/javascript" src="./assets/js/jquery.js"></script>',
+            pattern: '<script type="text/javascript" src="./assets/js/preloader.js"></script>',
             replacement: '<script type="text/javascript" src="./assets/js/build.min.js"></script>'
           }, {
-            pattern: '<script type="text/javascript" src="./assets/js/preloader.js"></script>',
-            replacement: ""
-          }, {
-            pattern: '<script type="text/javascript" src="./assets/js/elementTransitions.min.js"></script>',
-            replacement: ""
-          }, {
-            pattern: '<script type="text/javascript" src="./assets/js/yui.js"></script>',
-            replacement: ""
-          }, {
-            pattern: '<script type="text/javascript" src="./assets/js/jquery.circle-progress.js"></script>',
+            pattern: '<script type="text/javascript" src="./assets/js/progressbar.js"></script>',
             replacement: ""
           }, {
             pattern: '<script type="text/javascript" src="./assets/js/main.js"></script>',

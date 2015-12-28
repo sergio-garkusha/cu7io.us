@@ -25,65 +25,12 @@
   .height-block {
     width: 80%;
   }
-  .cbp-af-header #logo {
+  .sticky-logo-wrapper #logo {
     padding-left: 20px;
   }
-  section, .cbp-af-header #nav, #footer .row {
+  section, .sticky-logo-wrapper #nav, #footer .row {
     padding-left: 20px;
     padding-right: 20px;
-  }
-  section .crew {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .grid figure {
-    height: 250px;
-    margin: -0.50%;
-  }
-  .content-right {
-    padding: 40px;
-  }
-  #works {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .crew {
-    padding-bottom: 50px;
-  }
-  .crew .member {
-    width: 25%;
-    background: none;
-  }
-  .crew .member {
-    height: 278px;
-    margin-bottom: 140px;
-  }
-  .crew .member p {
-    display: none;
-  }
-  .crew .member p.title {
-    display: block;
-  }
-  .crew .text .social {
-    padding: 0px;
-  }
-  .crew .text .fa {
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-  .crew .member .image {
-    background-size: auto 90%;
-    height: 278px;
-    width: 100%;
-    margin-top: 50px;
-  }
-  .crew .member .text {
-    display: block;
-    opacity: 1;
-    padding: 0;
-    text-align: center;
-    top: 300px;
-    width: 100%;
   }
 }
 
@@ -96,44 +43,16 @@
     height: 100%;
     margin: 0;
   }
-  #main .section-content {
-    width: 100%;
-  }
-  .grid figure h2 {
-    font-size: 100%;
-    font-weight: 600;
-    letter-spacing: 3px;
-  }
-  .grid figure {
-    width: 100%;
-    height: 250px;
-    margin: -1%;
-  }
-  .blogtitle {
-    line-height: 30px;
-  }
   .height-block {
     width: 80%;
   }
-  #main-column {
-    width: 100%;
-  }
-  #sidebar� {
-    width: 100%;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  /* Header */
-  button.et-rotate {
-    display: block;
-  }
-  .cbp-af-header {
+  .sticky-logo-wrapper {
     display: none;
   }
   .logo-phone {
     display: block;
   }
-  .huge-title {
+  .hero-title {
     position: absolute;
     top: 0;
     right: 0;
@@ -155,149 +74,8 @@
   .column-content {
     width: 100%;
   }
-  /* Method */
-  .whatwedo {
-    margin-bottom: 20px;
-    padding-top: 15%;
-  }
-  .whatwedo .overlay-block {
-    opacity: 1;
-    position: relative;
-    -webkit-transform: translate3d(0, 0%, 0);
-    -moz-transform: translate3d(0, 0.0);
-    transform: translate3d(0, 0%, 0);
-    padding: 10px 30px;
-    text-align: center;
-  }
-  .whatwedo:hover > .overlay-block {
-    transition: all 0.3s ease-in-out 0s;
-    -webkit-transform: translate3d(0, 0%, 0);
-    -moz-transform: translate3d(0, 0.0);
-    transform: translate3d(0, 0%, 0);
-  }
-  .whatwedo:hover > img {
-    opacity: 1;
-  }
-  /* Works */
-  .grid figure {
-    height: 250px;
-  }
-  .grid figure img {
-    position: relative;
-    display: block;
-    height: 100%;
-    opacity: 0.3;
-  }
-  /* Works Content */
-  .content-right {
-    width: 100%;
-    text-align: center;
-    padding: 40px;
-    overflow-y: scroll;
-    position: absolute;
-  }
-  .content-left {
-    width: 0%;
-    position: relative;
-    height: auto;
-    display: none;
-  }
-  .mobile-view {
-    display: block;
-  }
-  /* Crew */
-  .crew {
-    padding-bottom: 100px;
-    padding-top: 100px;
-  }
-  .crew .member {
-    width: 50%;
-  }
-  .crew .member {
-    height: 278px;
-    margin-bottom: 140px;
-  }
-  .crew .member p {
-    display: none;
-  }
-  .crew .member p.title {
-    display: block;
-    font-size: 10px;
-  }
-  .crew .text .social {
-    padding: 0px;
-  }
-  .blog-date li {
-    font-family: "Montserrat", sans-serif;
-  }
-  .group-share {
-    text-align: left;
-    float: none;
-  }
-  .crew h4 {
-    font-size: 14px;
-  }
-  .crew .text .fa {
-    margin-left: 15px;
-    margin-right: 15px;
-    font-size: 14px;
-  }
-  .crew .member .image {
-    background-size: auto 90%;
-    height: 278px;
-    width: 100%;
-    margin-top: 50px;
-  }
-  .crew .member .text {
-    display: block;
-    opacity: 1;
-    padding: 0;
-    text-align: center;
-    top: 300px;
-    width: 100%;
-  }
-  /* Instagram */
-  .instagram-feed {
-    padding: 0;
-  }
-  .instagram-feed h4 {
-    padding: 0px 20px;
-    font-size: 20px;
-    line-height: 24px
-  }
-  #instagram .instagram-placeholder {
-    width: 100%;
-    padding: 0;
-  }
-  .tiles.four_up > li {
-    width: 46%;
-    border: none;
-    padding-bottom: 10px;
-  }
-  .clients_list {
-    border: none;
-  }
-  /* Contact */
-  .contact {
-    padding: 100px 20px;
-  }
-  .contact .left-side {
-    border: none;
-    text-align: center;
-    margin-top: 0;
-  }
-  .contact h4:first-child {
-    padding: 0px 0 5px;
-  }
-  .instagram .instagram-placeholder {
-    width: 100%;
-    padding: 0;
-  }
   /* Footer */
   #footer {
-    text-align: center;
-  }
-  #footer .text-right {
     text-align: center;
   }
   #logo-footer {
@@ -305,26 +83,15 @@
     background: linear-gradient(135deg, rgba(32, 152, 132, 0.7) 0%, rgba(98, 40, 140, 0.7) 100%);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.9);
   }
-  #main .method .section-content {
-    width: 80%;
-  }
-  .huge-title h1 {
+  .hero-title h1 {
     font-size: 26px;
     line-height: 32px;
     letter-spacing: 1px;
   }
 }
 
-/*@media screen and (max-width: 898px) and (min-width: 768px) {
-  #huge-title h1 {
-    font-size: 32px;
-    line-height: 46px;
-    letter-spacing: 2px
-  }
-}*/
-
 @media screen and (max-width: 600px) {
-  #huge-title h1 {
+  #hero-title h1 {
     font-size: 32px;
   }
   #go-down {
@@ -335,7 +102,7 @@
   }
 }
 @media screen and (max-width: 500px) {
-  #footer-sticky .nav {
+  #footer-sticky .footer-navigation {
     float: none;
     width: 255px;
     height: 80px;
