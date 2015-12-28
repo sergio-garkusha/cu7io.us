@@ -19,7 +19,8 @@ module.exports = function(grunt) {
             'dist/build.css'
           ]
         }
-      }
+      },
+      sourceMap: true
     },
 
     // concat & minify js
