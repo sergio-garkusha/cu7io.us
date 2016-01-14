@@ -294,6 +294,10 @@ body .header-inner-wrapper {
   line-height: 50px;
   letter-spacing: 4px;
   text-transform: uppercase;
+  -webkit-animation: fade-in-down 0.6s;
+  animation: fade-in-down 0.6s;
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 #hero-title h1 span {
   font-weight: bold;
@@ -305,6 +309,10 @@ body .header-inner-wrapper {
   font-style: italic;
   letter-spacing: 5px;
   font-size: 18px;
+  -webkit-animation: fade-in-up 0.6s;
+  animation: fade-in-up 0.6s;
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 #hero-title a:hover {
   color: #fff;
@@ -329,6 +337,8 @@ body .header-inner-wrapper {
   background-size: 25px;
   background-position: center center;
   transition: margin 0.4s linear;
+  -webkit-animation: bounce 4s 2s infinite;
+  animation: bounce 4s 2s infinite;
 }
 .go-down span:hover {
   margin-top: 5px;
@@ -439,18 +449,20 @@ body .header-inner-wrapper {
   width: 100px;
   height: 100px;
 }
-.circle strong {
+.circle span {
   position: absolute;
   top: 0;
   left: 0;
-  margin: 36px 0 0 30px;
-  font-size: 24px;
+  margin: 37px 0 0 56px;
   font-weight: normal;
 }
-.circles span {
+.circle .progressbar-text::after {
+  content: "%";
+  font-weight: normal;
+}
+.circles i {
   font-size: 14px !important;
   font-weight: normal;
-  font-style: italic;
   margin-top: 14px;
   display: inline-block;
 }
@@ -508,21 +520,6 @@ body .header-inner-wrapper {
 }
 
 /****************************
-  ANIMATIONS
-*****************************/
-
-@keyframes clockwise {
-  to {
-    transform: rotate(360deg) translatez(0);
-  }
-}
-@keyframes counter-clockwise {
-  to {
-    transform: rotate(-360deg) translatez(0);
-  }
-}
-
-/****************************
   SPINNER
 *****************************/
 
@@ -570,3 +567,108 @@ body .header-inner-wrapper {
   border-color: transparent transparent rgba(255, 255, 255, 0.25);
   border-radius: 100%;
 }
+
+/* ==========================================================================
+   13. Animations
+   ========================================================================== */
+
+
+/* Used to run the Loading Spinner */
+
+@keyframes clockwise {
+  to {
+    transform: rotate(360deg) translatez(0);
+  }
+}
+@keyframes counter-clockwise {
+  to {
+    transform: rotate(-360deg) translatez(0);
+  }
+}
+
+/* Used to fade in title/desc on the page */
+
+@-webkit-keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+/* Used to bounce .go-down on page */
+
+@-webkit-keyframes bounce {
+  0%, 10%, 25%, 40%, 50% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  20% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  30% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+/* ==========================================================================
+   End of file. Animations should be the last thing here. Do not add stuff
+   below this point, or it will probably fuck everything up.
+   ========================================================================== */

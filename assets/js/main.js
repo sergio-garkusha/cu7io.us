@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Utils
   function fade() {
-
     lastScroll = window.scrollY;
 
     heroTitle.style.transform = 'translate3d(0,' + Math.round(lastScroll / 2) + 'px,0)';
@@ -107,7 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
       scrolling = false;
       fade();
     }, 0);
-
   });
 
   // Executions block
