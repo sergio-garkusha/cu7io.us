@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="8px" height="141px" viewBox="0 0 8 141" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
+    <title>about-me-line</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="cu7io.us" sketch:type="MSArtboardGroup" transform="translate(-729.000000, -1483.000000)" stroke="#979797">
+            <g id="About-Me" sketch:type="MSLayerGroup" transform="translate(424.000000, 1460.000000)">
+                <g id="Line" transform="translate(306.000000, 23.000000)" sketch:type="MSShapeGroup">
+                    <g id="about-me-line">
+                        <path d="M3.03340123,0.327684335 L3.11089975,127.993575" id="Path-1"></path>
+                        <circle id="Oval-1" fill="#D8D8D8" cx="3" cy="137" r="3"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

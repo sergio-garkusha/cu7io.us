@@ -4,7 +4,7 @@
   "description": "Personal website of the web professional",
   "main": "server.js",
   "scripts": {
-    "run": "node server.js"
+    "server": "node server.js"
   },
   "author": "Cu7ious",
   "license": "GPLv.3+",

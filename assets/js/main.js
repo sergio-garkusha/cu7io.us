@@ -1,9 +1,13 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded",
+
+function () {
 
   "use strict";
 
   var FOOTER_APPEARS = 400;
   var TRIGGER = 80; // size of the footer
+
+  var is_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
   var scrolling = false;
   var lastScroll;
@@ -20,13 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
   var counter = 0;
   var height;
   var header = document.getElementById('header');
-  var cotnentTop = document.getElementById('content').getBoundingClientRect().top;
+  var contentTop = document.getElementById('content').getBoundingClientRect().top;
 
   var footer = document.getElementById('footer-sticky');
   var footerLogo = document.getElementById('logo-footer');
   var menuHome = document.getElementById('menu-home');
   var menuAbout = document.getElementById('menu-about');
-
 
   // Utils
   function fade() {
@@ -46,10 +49,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function initCircles() {
-    makeCircle('container1', 0.95, highColor);
-    makeCircle('container2', 0.80, highColor);
-    makeCircle('container3', 0.70, lowColor);
-    makeCircle('container4', 0.30, lowColor);
+    makeCircle('container1', 0.90, highColor);
+    makeCircle('container2', 0.97, highColor);
+    makeCircle('container3', 0.30, lowColor);
+    makeCircle('container4', 0.99, lowColor);
   }
 
   function setHeight(el) {
@@ -113,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setHeight(header);
 
-  if (window.scrollY > cotnentTop) {
+  if (window.scrollY > contentTop) {
     initCircles();
     progressSetter = true;
   }
@@ -126,6 +129,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", function () {
     var position = window.scrollY;
+
+    console.log(position);
 
     height = document.body.scrollHeight - document.body.offsetHeight;
 
@@ -161,47 +166,92 @@ document.addEventListener("DOMContentLoaded", function () {
       // console.log('down');
     } else {
       // upscroll code
-      footer.classList.add('footer-closed');
+      // footer.classList.add('footer-closed');
       footerLogo.style.opacity = '0';
 
       setTimeout(function () {
-        if (position === 0) {
+
+        footer.classList.remove('footer-closed');
+
+        if (position <= 0) {
           menuAbout.style.display = 'block';
           menuHome.style.display = 'none';
-          footer.classList.remove('footer-closed');
         }
 
-        setTimeout(function () {
+        // setTimeout(function () {
           counter = 0;
-        }, 800);
+        // }, 800);
 
       }, 100);
       // console.log('up');
     }
 
-    lastScrollTop = position;
+    setTimeout(function () {
+      lastScrollTop = position;
+    }, 810);
   });
 
   // Animate Scrolling to content on click on the elements
   var goDownElements = document.getElementsByClassName('go-down-event');
+  var elToScroll = is_firefox ? document.getElementsByTagName('html')[0] : document.body
   goDownElements = Array.prototype.slice.call(goDownElements);
   goDownElements.forEach(function (el) {
     el.addEventListener('click', function (e) {
       e.preventDefault();
-      var cotnentTop = document.getElementById('content').getBoundingClientRect().top;
-      scrollTo(document.body, cotnentTop, 800);
-    });
+      var contentTop = document.getElementById('content').getBoundingClientRect().top;
+      scrollTo(elToScroll, contentTop, 800);
+    }, false);
   });
 
   // Animate Scrolling to top on click on the elements
   var goDownElements = document.getElementsByClassName('go-up-event');
+  var elToScroll = is_firefox ? document.getElementsByTagName('html')[0] : document.body
   goDownElements = Array.prototype.slice.call(goDownElements);
   goDownElements.forEach(function (el) {
     el.addEventListener('click', function (e) {
       e.preventDefault();
-      scrollTo(document.body, 0, 1000);
-    });
+      scrollTo(elToScroll, 0, 1000);
+    }, false);
   });
+
+  // Typewriter
+  (function() {
+    var CNT = 0;
+    var Sentences = [
+      "Reactive Web Apps..", "Bulletproof API's..",
+      "Robust WordPress Themes..", "Cool WordPress Plugins..",
+      "Tasty Website Templates.."
+    ];
+
+    var str;
+    var i = 0;
+    var isTag, text;
+
+    function type () {
+      text = str.slice(0, i++);
+      if (text === str) {
+        i = 0;
+        return
+      };
+      document.getElementById('created-item-text').innerText = text;
+      var char = text.slice(-1);
+      setTimeout(type, 80);
+    }
+
+    setInterval(function() {
+      if (CNT > 3) CNT = 0;
+      var evt = new CustomEvent('type-header-text', {detail: {
+        sentence: Sentences[CNT]
+      }});
+      CNT = CNT + 1;
+      window.dispatchEvent(evt);
+    }, 5000)
+
+    window.addEventListener('type-header-text', function (e) {
+      str = e.detail.sentence;
+      type();
+    }, false);
+  })();
 
 });
 
