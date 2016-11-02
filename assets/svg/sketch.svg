@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="99px" height="89px" viewBox="0 0 99 89" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
+    <title>sketch</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.35 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="cu7io.us" sketch:type="MSArtboardGroup" transform="translate(-863.000000, -2735.000000)">
+            <g id="About-Me" sketch:type="MSLayerGroup" transform="translate(424.000000, 1460.000000)">
+                <g id="sketchapp" transform="translate(388.000000, 1277.000000)" sketch:type="MSShapeGroup">
+                    <g id="sketch" transform="translate(53.000000, 0.000000)">
+                        <path d="M81.0360765,7.31182805 L64.5534472,0.112489713 L30.3794806,0.112489713 L13.9975605,7.44521575 L0.368217073,22.4770342 L47.5,84.7047144 L94.6317828,22.4770342 L81.0360765,7.31182805 Z" id="Shape" fill="#FFCC00" filter="url(#filter-1)"></path>
+                        <path d="M81.0360765,7.31182805 L64.5534472,0.112489713 L30.3794806,0.112489713 L13.9975605,7.44521575 L0.368217073,22.4770342 L47.5,84.7047144 L94.6317828,22.4770342 L81.0360765,7.31182805 L81.0360765,7.31182805 L81.0360765,7.31182805 Z M90.7041342,22.8805971 L75.7992114,33.9543791 L65.1995958,18.1858286 L80.1967681,11.1780727 L90.7041342,22.8805971 L90.7041342,22.8805971 L90.7041342,22.8805971 Z M70.3272921,35.6426239 L23.7997628,35.6426239 L33.0597481,19.3107252 L60.7935798,19.3773191 L70.3272921,35.6426239 L70.3272921,35.6426239 L70.3272921,35.6426239 Z M33.4321697,2.54926576 L61.8220194,2.54926576 L75.7992114,8.66930327 L61.7621981,14.7399453 L33.372349,14.7399453 L19.4769324,8.67430281 L33.4321697,2.54926576 L33.4321697,2.54926576 L33.4321697,2.54926576 Z M14.7712065,11.1780727 L28.8352097,18.1774294 L18.7643159,33.6428081 L4.26384021,22.8805971 L14.7712065,11.1780727 L14.7712065,11.1780727 L14.7712065,11.1780727 Z M9.66747898,31.0340478 L18.8311867,38.7051426 L40.6326577,74.3260685 L9.66747898,31.0340478 L9.66747898,31.0340478 L9.66747898,31.0340478 Z M25.0703067,40.7087583 L69.2478938,40.7087583 L47.5,80.5051007 L25.0703067,40.7087583 L25.0703067,40.7087583 L25.0703067,40.7087583 Z M54.3353168,74.3260685 L76.1367878,38.7051426 L85.3004956,31.0340478 L54.3353168,74.3260685 L54.3353168,74.3260685 L54.3353168,74.3260685 Z" id="Shape" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

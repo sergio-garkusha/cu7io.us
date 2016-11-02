@@ -108,6 +108,9 @@
     height: 80px;
     margin: 0 auto;
   }
+  #footer-sticky .footer-navigation li {
+    padding: 0 9px;
+  }
   #footer-sticky p {
     opacity: 0;
     height: 0;

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="81px" height="95px" viewBox="0 0 81 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
+    <title>Webpack</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="50%" id="radialGradient-1">
+            <stop stop-color="#93B4E7" offset="0%"></stop>
+            <stop stop-color="#B9D1F8" offset="59.2733578%"></stop>
+            <stop stop-color="#9CB6E0" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="cu7io.us" sketch:type="MSArtboardGroup" transform="translate(-877.000000, -1868.000000)">
+            <g id="About-Me" sketch:type="MSLayerGroup" transform="translate(424.000000, 1460.000000)">
+                <g id="Webpack" transform="translate(393.000000, 408.000000)" sketch:type="MSShapeGroup">
+                    <g transform="translate(60.000000, 0.000000)" id="Shape">
+                        <path d="M40.5102332,0.146196018 L0.0942597864,23.8151851 L0.0942597864,71.1531635 L40.5102332,94.8222986 L80.9263504,71.1531635 L80.9263504,23.8151851 L40.5102332,0.146196018 L40.5102332,0.146196018 Z" fill="url(#radialGradient-1)"></path>
+                        <path d="M40.5106654,24.1552371 L20.4683541,35.8927305 L20.4683541,59.3678638 L40.5106654,71.1055034 L60.5532652,59.3678638 L60.5532652,35.8927305 L40.5106654,24.1552371 L40.5106654,24.1552371 Z" fill="#6F95DB"></path>
+                        <path d="M40.5,0 L0,23.8299509 L40.5,46.1979416 L81,23.976147 L40.5,0 L40.5,0 Z" fill-opacity="0.1" fill="#FFFFFF"></path>
+                        <path d="M40.5,49.2680582 L0,71.0512648 L40.5,94.7350196 L80.8558719,70.9050688 L40.5,49.2680582 L40.5,49.2680582 Z" fill-opacity="0.1" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
