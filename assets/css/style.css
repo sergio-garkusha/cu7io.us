@@ -1118,7 +1118,8 @@ a:hover {
 .line-divider {
   height: 1px;
   background-color: #c6c6c6;
-  margin: 48px 0;
+  margin: 100px auto 100px;
+  max-width: 45%;
 }
 
 #my-pics {
