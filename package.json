@@ -4,12 +4,12 @@
   "description": "Personal website of the web professional",
   "main": "server.js",
   "scripts": {
-    "server": "node server.js"
+    "server": "./node_modules/.bin/static-server"
   },
   "author": "Cu7ious",
   "license": "GPLv.3+",
   "devDependencies": {
-    "express": "^4.13.3",
+    "static-server": "^2.0.3",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-cssmin": "^0.14.0",
@@ -17,5 +17,6 @@
     "grunt-exec": "^0.4.6",
     "grunt-string-replace": "^1.2.0",
     "grunt-uncss": "^0.4.3"
-  }
+  },
+  "repository": "https://github.com/Cu7ious/cu7io.us.git"
 }

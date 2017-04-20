@@ -1,13 +1,11 @@
-document.addEventListener("DOMContentLoaded",
-
-function () {
+document.addEventListener("DOMContentLoaded", function () {
 
   "use strict";
 
   var FOOTER_APPEARS = 400;
   var TRIGGER = 80; // size of the footer
 
-  var is_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+  var IS_FIREFOX = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
   var scrolling = false;
   var lastScroll;
@@ -31,6 +29,20 @@ function () {
   var menuHome = document.getElementById('menu-home');
   var menuAbout = document.getElementById('menu-about');
 
+  var myWorksContentTop
+
+  var worksDescriptions = [
+    '<h4>SentiSum</h4><p>SentiSum provides pre-trained models, but we also create custom models depending on client requirements. Your success is our priority. We build awesome into everything we do. You can use SentiSum to understand how people feel about your products, or to automatically classify your data into custom topologies, or to see what features of your service are disappointing your clients the most.</p><a class="border-button">Check Online</a>',
+    '<h4>Zentist</h4><p>Zentist is a dental care platform to help patients find and finance their dental procedures. Zentist connects patients with top US dental clinics and delivers transparent price/quality information. Zentist achieves two major improvisations to the current process of connecting patients with dentists: It allows patients to find dentists according to their price point, as well as finance their dental procedures. Patients can engage with, share their medical info before setting up an appointment. Zentist started operations in May 2016 and looks to make $3.6M in annualized GMV this March (2017). Zentist targets a massive market: Americans pay $54B out of pocket for dental procedures annually.</p><a class="border-button">Check Online</a>',
+    '<h4>MotoPress</h4><p>MotoPress Visual Page Builder enhances the standard WordPress builder and enables to build websites visually. It’s the complete solution for building responsive pages without coding and simply by dragging and dropping content elements. MotoPress plugin is easily extendable, fully responsive and works with all WordPress themes.</p><a class="border-button">Check Online</a>',
+  ];
+
+  var worksPictures = [
+    '<img src="./assets/images/Senti1.png"><img src="./assets/images/Senti2.png"><img src="./assets/images/Senti3.png">',
+    '<img src="./assets/images/zent5.jpg"><img src="./assets/images/zent2.jpg"><img src="./assets/images/zent3.jpg"><img src="./assets/images/zent4.jpg"><img src="./assets/images/zent.jpg">',
+    '<img src="./assets/images/moto2.jpg"><img src="./assets/images/Moto4.png"><img src="./assets/images/moto3.png"><div style="position:relative;height:0;padding-bottom:75.0%"><iframe src="https://www.youtube.com/embed/Q8fdnBmwtOY?ecver=2" width="480" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>'
+  ];
+
   // Utils
   function fade() {
     lastScroll = window.scrollY;
@@ -48,12 +60,71 @@ function () {
     }
   }
 
-  function initCircles() {
-    makeCircle('container1', 0.90, highColor);
-    makeCircle('container2', 0.97, highColor);
-    makeCircle('container3', 0.30, lowColor);
-    makeCircle('container4', 0.99, lowColor);
+  var works = document.querySelectorAll('.work-item');
+  var workDetails = document.getElementById('works-container');
+  var cLeft = document.getElementById('content-left');
+  var cRight = document.getElementById('content-right');
+  var closex = document.getElementById('closex');
+
+// works section {
+  function worksCloseActions() {
+    setTimeout(function() {
+      cLeft.classList.remove('show');
+      cRight.classList.remove('show');
+    }, 500);
+
+    setTimeout(function() {
+      workDetails.style.visibility = 'hidden';
+      workDetails.style.opacity = '0';
+    }, 600);
+
+    setTimeout(function() {
+      workDetails.style.display = 'none';
+      document.body.style.overflow = 'initial';
+    }, 1200);
   }
+
+  closex.addEventListener("click", function(e) {
+    worksCloseActions();
+  }, true);
+  workDetails.addEventListener("click", function(e) {
+    worksCloseActions();
+  }, true);
+  document.addEventListener('keyup', function(e) {
+    if (e.keyCode == 27) {
+      worksCloseActions();
+    }
+  })
+// works section END }
+
+  works.forEach(function(el, idx) {
+    el.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      document.getElementById('cont').innerHTML = worksDescriptions[idx]
+      document.getElementById('img').innerHTML = worksPictures[idx]
+
+      workDetails.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+
+      setTimeout(function() {
+        workDetails.style.opacity = '1';
+        workDetails.style.visibility = 'visible';
+      }, 200);
+
+      setTimeout(function() {
+        cLeft.classList.add('show');
+        cRight.classList.add('show');
+      }, 500);
+    }, true);
+  });
+
+  // function initCircles() {
+  //   makeCircle('container1', 0.95, highColor);
+  //   makeCircle('container2', 0.95, highColor);
+  //   makeCircle('container3', 0.95, lowColor);
+  //   makeCircle('container4', 0.95, lowColor);
+  // }
 
   function setHeight(el) {
     var elHeight = document.body.offsetHeight;
@@ -73,27 +144,27 @@ function () {
     }, 10);
   }
 
-  function makeCircle(DOMel, qty, color) {
-    var element = document.getElementById(DOMel);
-    var circle = new ProgressBar.Circle(element, {
-      color: color,
-      trailColor: '#e6e6e6',
-      trailWidth: 2,
-      duration: 2000,
-      easing: 'easeOut',
-      strokeWidth: 4,
-      text: {
-        value: '0'
-      },
-
-      // Set default step function for all animate calls
-      step: function (state, circle) {
-        circle.setText((circle.value() * 100).toFixed(0));
-      }
-    });
-
-    circle.animate(qty);
-  }
+  // function makeCircle(DOMel, qty, color) {
+  //   var element = document.getElementById(DOMel);
+  //   var circle = new ProgressBar.Circle(element, {
+  //     color: color,
+  //     trailColor: '#e6e6e6',
+  //     trailWidth: 2,
+  //     duration: 2000,
+  //     easing: 'easeOut',
+  //     strokeWidth: 4,
+  //     text: {
+  //       value: '0'
+  //     },
+  //
+  //     // Set default step function for all animate calls
+  //     step: function (state, circle) {
+  //       circle.setText((circle.value() * 100).toFixed(0));
+  //     }
+  //   });
+  //
+  //   circle.animate(qty);
+  // }
   // Utils END
 
 
@@ -117,20 +188,21 @@ function () {
   setHeight(header);
 
   if (window.scrollY > contentTop) {
-    initCircles();
+    // initCircles();
     progressSetter = true;
   }
 
   window.addEventListener("resize", function () {
     setTimeout(function () {
       setHeight(header);
+      myWorksContentTop = null;
     }, 200);
   })
 
   window.addEventListener("scroll", function () {
     var position = window.scrollY;
 
-    console.log(position);
+    // console.log(position);
 
     height = document.body.scrollHeight - document.body.offsetHeight;
 
@@ -152,7 +224,7 @@ function () {
         if (counter === 0) {
           if (position + FOOTER_APPEARS > footerOffset) {
             if (!progressSetter) {
-              initCircles();
+              // initCircles();
               progressSetter = true;
             }
           }
@@ -193,19 +265,33 @@ function () {
 
   // Animate Scrolling to content on click on the elements
   var goDownElements = document.getElementsByClassName('go-down-event');
-  var elToScroll = is_firefox ? document.getElementsByTagName('html')[0] : document.body
+  var elToScroll = IS_FIREFOX ? document.getElementsByTagName('html')[0] : document.body
   goDownElements = Array.prototype.slice.call(goDownElements);
   goDownElements.forEach(function (el) {
     el.addEventListener('click', function (e) {
       e.preventDefault();
       var contentTop = document.getElementById('content').getBoundingClientRect().top;
-      scrollTo(elToScroll, contentTop, 800);
+      scrollTo(elToScroll, contentTop, 500);
     }, false);
   });
 
+  // Animate Scrolling to content on click on the elements
+  (function() {
+    var toWorks = document.getElementById('menu-works');
+    toWorks.addEventListener('click', function (e) {
+      e.preventDefault();
+      var elToScroll = IS_FIREFOX ? document.getElementsByTagName('html')[0] : document.body
+      myWorksContentTop = myWorksContentTop
+        ? myWorksContentTop
+        : document.getElementById('portfolio').getBoundingClientRect().top;
+      console.log(myWorksContentTop);
+      scrollTo(elToScroll, myWorksContentTop, 500);
+    }, false);
+  })()
+
   // Animate Scrolling to top on click on the elements
   var goDownElements = document.getElementsByClassName('go-up-event');
-  var elToScroll = is_firefox ? document.getElementsByTagName('html')[0] : document.body
+  var elToScroll = IS_FIREFOX ? document.getElementsByTagName('html')[0] : document.body
   goDownElements = Array.prototype.slice.call(goDownElements);
   goDownElements.forEach(function (el) {
     el.addEventListener('click', function (e) {
@@ -218,8 +304,10 @@ function () {
   (function() {
     var CNT = 0;
     var Sentences = [
-      "Reactive Web Apps..", "Bulletproof API's..",
-      "Robust WordPress Themes..", "Cool WordPress Plugins..",
+      "Reactive Web Apps..",
+      "Bulletproof API's..",
+      "Robust WordPress Themes..",
+      "Cool WordPress Plugins..",
       "Tasty Website Templates.."
     ];
 

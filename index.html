@@ -3,233 +3,391 @@
 <!--
     @TODO
     1. Check NginX for encoding settings
-    2. Cange icon to .png
+    2. Change icon to .png
 -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
 
-    <title>CU7IOUS :: PhoenixTeam Co-Founder, Full Stack Web Developer</title>
+  <title>CU7IOUS :: 500 Startups B20 Alumni Full Stack Engineer</title>
 
-    <link rel="stylesheet" href="./assets/css/style.css" type="text/css" media="all">
-    <link rel="stylesheet" href="./assets/css/gumby.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="./assets/css/media-queries.css" type="text/css" media="screen">
-    <!-- <link rel="stylesheet" href="./assets/css/elementTransitions.css" type="text/css" media="screen"> -->
-    <!-- <link rel="stylesheet" href="./assets/css/baseline-checker.css" type="text/css" media="screen"> -->
-    <link rel="icon" href="./assets/images/cu7ious_avatar.jpg" sizes="32x32">
-    <link rel="icon" href="./assets/images/cu7ious_avatar.jpg" sizes="192x192">
-    <link rel="apple-touch-icon-precomposed" href="./assets/images/cu7ious_avatar.jpg">
-    <meta name="msapplication-TileImage" content="./assets/images/cu7ious_avatar.jpg">
+  <link rel="stylesheet" href="./assets/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="./assets/css/gumby.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="./assets/css/media-queries.css" type="text/css" media="screen">
+  <!-- <link rel="stylesheet" href="./assets/css/elementTransitions.css" type="text/css" media="screen"> -->
+  <!-- <link rel="stylesheet" href="./assets/css/baseline-checker.css" type="text/css" media="screen"> -->
+  <link rel="icon" href="./assets/images/cu7ious_avatar.jpg" sizes="32x32">
+  <link rel="icon" href="./assets/images/cu7ious_avatar.jpg" sizes="192x192">
+  <link rel="apple-touch-icon-precomposed" href="./assets/images/cu7ious_avatar.jpg">
+  <meta name="msapplication-TileImage" content="./assets/images/cu7ious_avatar.jpg">
 </head>
 
 <body>
 
-    <script>
-        // document.addEventListener('touchmove', function(event) {
-        //   event.preventDefault();
-        // }, false);
-        (function() {
-            var preloaderHTML = [];
-            preloaderHTML.push('<div id="preloader-stage">');
-            preloaderHTML.push('<div class="preloader-inner-wrapper">');
-            preloaderHTML.push('<h1>Cu7ious</h1>');
-            preloaderHTML.push('<div class="multi">');
-            preloaderHTML.push('<div></div>');
-            preloaderHTML.push('</div></div></div>');
-            document.body.insertAdjacentHTML('afterbegin', preloaderHTML.join(''));
-        })();
+  <script>
+    // document.addEventListener('touchmove', function(event) {
+    //   event.preventDefault();
+    // }, false);
+    (function() {
+      var preloaderHTML = [];
+      preloaderHTML.push('<div id="preloader-stage">');
+      preloaderHTML.push('<div class="preloader-inner-wrapper">');
+      preloaderHTML.push('<h1>Cu7ious</h1>');
+      preloaderHTML.push('<div class="multi">');
+      preloaderHTML.push('<div></div>');
+      preloaderHTML.push('</div></div></div>');
+      document.body.insertAdjacentHTML('afterbegin', preloaderHTML.join(''));
+    })();
 
-    </script>
+  </script>
 
-    <div class="container">
+  <div class="container">
 
-        <div class="sticky-logo-wrapper">
-            <nav class="row">
-                <div id="logo" class="clearfix">
-                    <h1 id="logo-large-screens" class="logo-text">
-                      <a href="/" title="Cu7io.us">Cu7ious</a>
-                    </h1>
-                </div>
-            </nav>
+    <div class="sticky-logo-wrapper">
+      <nav class="row">
+        <div id="logo" class="clearfix">
+          <h1 id="logo-large-screens" class="logo-text">
+            <a href="/" title="Cu7io.us">Cu7ious</a>
+          </h1>
+        </div>
+      </nav>
+    </div>
+
+    <section id="header">
+      <img id="headerImage" src="assets/images/scene.jpeg" alt="Header background image">
+      <div class="header-inner-wrapper">
+
+        <div id="hero-title">
+          <div class="height-block">
+            <div class="logo-phone centered">
+              <h1><a href="/" title="Cu7ious">Cu7ious</a></h1>
+            </div>
+            <h1>
+              I am a creator of
+              <br>
+              <span id="created-item-text">Tasty Website Templates.</span>
+            </h1>
+            <a target="_blank" href="//linkedin.com/in/sergiigarkusha/en">Let me in »</a>
+          </div>
         </div>
 
-        <section id="header">
-            <img id="headerImage" src="assets/images/scene.jpeg" alt="Header background image">
-            <div class="header-inner-wrapper">
-
-                <div id="hero-title">
-                    <div class="height-block">
-                        <div class="logo-phone centered">
-                            <h1><a href="/" title="Cu7ious">Cu7ious</a></h1>
-                        </div>
-                        <h1>
-                            I am creator of
-                            <br>
-                            <span id="created-item-text">Tasty Website Templates.</span>
-                        </h1>
-                        <a target="_blank" href="//themes.phoenix-theme.com/">Browse'em all »</a>
-                    </div>
-                </div>
-
-                <div id="go-down" class="go-down go-down-event">
-                    <span></span>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Show standard footer -->
-        <section id="content">
-
-            <div class="row">
-                <div class="container auto-scrolling">
-                    <div class="twelve columns">
-                        <h2>
-                            Full Stack Developer
-                            <br/>
-                            PhoenixTeam Co-Founder.
-                        </h2>
-                        <div class="image photo">
-                            <img src="./assets/images/CU7IOUS.jpg" alt="CU7OUS">
-                            <span class="mask"></span>
-                        </div>
-
-                        <div class="about-me-lines">
-                            <div class="skills-line">
-                                <figure>
-                                    <img src="./assets/svg/Geek.svg" alt="Geek">
-                                    <figcaption>
-                                        I'm the geek who's<br/>cu7ious about the Web
-                                    </figcaption>
-                                </figure>
-                                <figure style="bottom: -75px;">
-                                    <img src="./assets/svg/JavaScript.svg" alt="JavaScript">
-                                    <figcaption>
-                                        I have strong coding<br/>skills with JavaScript
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div class="skills-line">
-                                <figure>
-                                    <img src="./assets/svg/r_n_r.svg" alt="React.js and Redux.js">
-                                    <figcaption>
-                                        React.js &amp; Redux.js<br/>big fan
-                                    </figcaption>
-                                </figure>
-                                <figure style="bottom: -125px;">
-                                    <img src="./assets/svg/Webpack.svg" alt="Webpack">
-                                    <figcaption>
-                                        Automation of routines<br/>is my passion
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div class="skills-line">
-                                <figure style="bottom: -25px;">
-                                    <img src="./assets/svg/n_n_n.svg" alt="Node.js and NPM">
-                                    <figcaption>
-                                        Node &amp; NPM allaws me<br/>to use JS on server
-                                    </figcaption>
-                                </figure>
-                                <figure style="bottom: -135px;">
-                                    <img src="./assets/svg/DBS.svg" alt="Redis and MongoDB">
-                                    <figcaption>
-                                        NoSQL DBs are my<br/>favorite DBs
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div class="skills-line">
-                                <figure style="bottom: -25px;">
-                                    <img src="./assets/svg/terminal.svg" alt="Command Line">
-                                    <figcaption>
-                                        I’m a Command line<br/>ninja
-                                    </figcaption>
-                                </figure>
-                                <figure style="bottom: -158px;">
-                                    <img src="./assets/svg/OSs.svg" alt="Linux and Mac OS">
-                                    <figcaption>
-                                        So I like *nix Operating<br/>Sytems
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div class="skills-line">
-                                <figure style="bottom: -62px;">
-                                    <img src="./assets/svg/Vim.svg" alt="Vim">
-                                    <figcaption>
-                                        As well as VIM editor<br/>(and mode)
-                                    </figcaption>
-                                </figure>
-                                <figure style="bottom: -200px;">
-                                    <img src="./assets/svg/sketch.svg" alt="Sketch">
-                                    <figcaption>
-                                        I also have a good<br/>taste for design
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div class="skills-starter-line">
-                                <figure>
-                                    <img src="./assets/svg/WP.svg" alt="WordPress">
-                                    <figcaption>
-                                        And all this started with<br/>WordPress
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <!-- <p>I'm the geek who's cu7ious about the Web.</p>
-                            <p>Strong in coding with JavaScript / Node.js and in automation of routines.</p>
-                            <p>React.js + Redux.js + Express.js + MongoDB stack fan.</p>
-                            <p>Professional WordPress developer.</p>
-                            <p>Unix-head. Command line ninja. Vimer.</p>
-                            <p>DigitalOcean &amp; LEMP stack user.</p>
-                            <p>My IDE is whole operating system.</p>
-                            <p>World Citizen &amp; Traveler. Currently live in San Francisco.</p>
-                            <p>If you have something interesting for me, don’t be shy to get in touch.</p> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div id="go-down" class="go-down go-down-event">
+          <span></span>
         </div>
 
-            <div class="the-sea-fo-tech">
+      </div>
+    </section>
+
+    <!-- Show standard footer -->
+    <section id="content">
+
+      <div class="row">
+        <div class="container auto-scrolling">
+          <div class="twelve columns">
+            <h2>
+                500 Startups B20 Alumni
+                <br/>
+                Full Stack Engineer.
+            </h2>
+            <div id="my-pics" class="image photo">
+              <div class="slide1"></div>
+              <div class="slide2"></div>
+              <div class="slide3"></div>
+              <!-- <img src="./assets/images/Cu7ious-at-Golden-Gate-Bridge-wth-Smile.jpg" alt="CU7OUS">
+              <img src="./assets/images/Cu7ious-at-500-Startups-SF.jpg" alt="CU7OUS">
+              <img src="./assets/images/CU7IOUS-digital-nomad.jpg" alt="CU7OUS"> -->
+              <!-- <span class="mask"></span> -->
+            </div>
+
+            <div class="about-me-lines">
+              <div class="skills-line">
+                <figure>
+                  <img src="./assets/svg/Geek.svg" alt="Geek">
+                  <figcaption>
+                    I'm the geek who's<br/>cu7ious about the Web
+                  </figcaption>
+                </figure>
+                <figure style="bottom: -75px;">
+                  <img src="./assets/svg/JavaScript.svg" alt="JavaScript">
+                  <figcaption>
+                    I have strong coding<br/>skills with JavaScript
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="skills-line">
+                <figure>
+                  <img src="./assets/svg/r_n_r.svg" alt="React.js and Redux.js">
+                  <figcaption>
+                    React.js &amp; Redux.js<br/>big fan
+                  </figcaption>
+                </figure>
+                <figure style="bottom: -125px;">
+                  <img src="./assets/svg/Webpack.svg" alt="Webpack">
+                  <figcaption>
+                    Automation of routines<br/>is my passion
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="skills-line">
+                <figure style="bottom: -25px;">
+                  <img src="./assets/svg/n_n_n.svg" alt="Node.js and NPM">
+                  <figcaption>
+                    Node &amp; NPM allaws me<br/>to use JS on server
+                  </figcaption>
+                </figure>
+                <figure style="bottom: -135px;">
+                  <img src="./assets/svg/DBS.svg" alt="Redis and MongoDB">
+                  <figcaption>
+                    NoSQL DBs are my<br/>favorite DBs
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="skills-line">
+                <figure style="bottom: -25px;">
+                  <img src="./assets/svg/terminal.svg" alt="Command Line">
+                  <figcaption>
+                    I’m a Command line<br/>ninja
+                  </figcaption>
+                </figure>
+                <figure style="bottom: -158px;">
+                  <img src="./assets/svg/OSs.svg" alt="Linux and Mac OS">
+                  <figcaption>
+                    So I like *nix Operating<br/>Sytems
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="skills-line">
+                <figure style="bottom: -62px;">
+                  <img src="./assets/svg/Vim.svg" alt="Vim">
+                  <figcaption>
+                    As well as VIM editor<br/>(and mode)
+                  </figcaption>
+                </figure>
+                <figure style="bottom: -200px;">
+                  <img src="./assets/svg/sketch.svg" alt="Sketch">
+                  <figcaption>
+                    I also have a good<br/>taste for design
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="skills-starter-line">
+                <figure>
+                  <!-- <img src="./assets/svg/WP.svg" alt="WordPress"> -->
+                  <img width="120" src="./assets/images/Marathons.png" alt="Marathons">
+                  <figcaption>
+                    <!-- And all this started with<br/>WordPress -->
+                    And I run marathons <br/>to be strong
+                  </figcaption>
+                </figure>
+              </div>
+              <!--
+                <p>I'm the geek who's cu7ious about the Web.</p>
+                <p>Strong in coding with JavaScript / Node.js and in automation of routines.</p>
+                <p>React.js + Redux.js + Express.js + MongoDB stack fan.</p>
+                <p>Professional WordPress developer.</p>
+                <p>Unix-head. Command line ninja. Vimer.</p>
+                <p>DigitalOcean &amp; LEMP stack user.</p>
+                <p>My IDE is whole operating system.</p>
+                <p>World Citizen &amp; Traveler. Currently live in San Francisco.</p>
+                <p>If you have something interesting for me, don’t be shy to get in touch.</p>
+              -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="line-divider"></div>
+
+      <!-- <div class="row">
+        <div class="container auto-scrolling">
+          <div class="twelve columns">
+            <div class="works get-in-touch">
+              <nav>
+                <ul>
+                  <li><a href="#">Projects</a></li>
+                  <li><a href="#">Experiments</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <section id="works"> -->
+<!-- /// ---- /// -->
+        <div id="works-container" class="shadow">
+          <div id="content-left" class="content-left row">
+            <!-- don't forget to add `single-element` class for a single content -->
+            <div id="img" class="ten columns centered"></div>
+          </div>
+
+          <div id="content-right" class="content-right">
+            <!-- close btn -->
+            <div id="closex"></div>
+            <!-- description block -->
+            <div id="cont"></div>
+            <!-- Content on Mobile View - same as content left ( don't forget the mobile-view class ) -->
+            <div class="ten columns centered mobile-view">
+              <!-- <img src="./assets/images/" alt=""> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- <div class="container auto-scrolling"> -->
+          <div class="container">
+            <!-- <div class="twelve columns"> -->
+              <!-- <div class="row"> -->
+                <div id="portfolio" class="row">
+                  <h2>My Works</h2>
+                  <div class="portfolio-row row work-item">
+                    <div class="six columns">
+                      <article class="portfolio-card">
+                        <a class="work-read-more" href="#">
+                          <img src="./assets/images/SentiSum.jpg" alt="SentiSum">
+                        </a>
+                      </article>
+                    </div>
+                    <div class="six columns">
+                      <article class="portfolio-card">
+                        <h2>SentiSum Dashboard</h2>
+                        <h3>Full Stack Lead.</h3>
+                        <ul>
+                          <li>Back End Architecture</li>
+                          <li>Front End Architecture</li>
+                          <li>Project Conceptualization</li>
+                          <li>Led the Team of 4 Engineers</li>
+                          <a class="work-read-more" href="#">Read More »</a>
+                        </ul>
+                        <!-- <div class="tags-block">
+                          <span>Node.js</span>
+                          <span>Feathers.js</span>
+                          <span>MongoDB</span>
+                          <span>React.js</span>
+                          <span>Webpack</span>
+                          <span>Ant.d</span>
+                          <span>Socket.io</span>
+                          <span>Docker</span>
+                          <span>AWS</span>
+                          <span>NginX</span>
+                        </div> -->
+                      </article>
+                    </div>
+                  </div>
+                  <div class="portfolio-row row  work-item">
+                    <div class="six columns">
+                      <article class="portfolio-card">
+                        <h2>Zentist Machine</h2>
+                        <h3>Senior Front End.</h3>
+                        <ul>
+                          <li>Led the Remote Team of 10 People</li>
+                          <li>Fix Front End Build Process</li>
+                          <li>Migrate Product to React.js</li>
+                          <a class="work-read-more" href="#">Read More »</a>
+                        </ul>
+                      </article>
+                    </div>
+                    <div class="six columns">
+                      <article class="portfolio-card">
+                        <a class="work-read-more" href="#">
+                          <img src="./assets/images/Zentist.jpg" alt="SentiSum">
+                        </a>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="portfolio-row row  work-item">
+                    <div class="six columns">
+                      <article class="portfolio-card">
+                        <a class="work-read-more" href="#">
+                          <img src="./assets/images/MotoPress.jpg" alt="SentiSum">
+                        </a>
+                      </article>
+                    </div>
+                    <div class="six columns">
+                      <article class="portfolio-card">
+                        <h2>MotoPress Content Editor</h2>
+                        <h3>Full Stack Fellow.</h3>
+                        <ul>
+                          <li>Product Architecture</li>
+                          <li>Conceptualization of Products</li>
+                          <li>Continuous Delivery Scenarios</li>
+                          <a class="work-read-more" href="#">Read More »</a>
+                        </ul>
+                      </article>
+                    </div>
+                  </div>
+              </div>
+            <!-- </div> -->
+          <!-- </div> -->
+
+        </div>
+
+    </div>
+
+      <!-- </section> -->
+
+      <!-- <div class="row">
+        <div class="container auto-scrolling">
+          <div class="row">
+            <div class="circles">
+              <div class="three columns">
+                <div class="skill-card">
+                  <div class="circle" id="container1"></div>
+                  <i>Full Stack JavaScript</i>
+                </div>
+              </div>
+              <div class="three columns">
+                <div class="skill-card">
+                  <div class="circle" id="container2"></div>
+                  <i>HTML 5 / CSS 3</i>
+                </div>
+              </div>
+              <div class="three columns">
+                <div class="skill-card">
+                  <div class="circle" id="container3"></div>
+                  <i>UX / UI</i>
+                </div>
+              </div>
+              <div class="three columns">
+                <div class="skill-card">
+                  <div class="circle" id="container4"></div>
+                  <i>WordPress / PHP</i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div> -->
+
+      <div class="row">
+        <div class="container auto-scrolling">
+          <div class="twelve columns">
+            <div class="get-in-touch">
+              <h4>Get in touch with me</h4>
+              <!-- <p>If you have something interesting for me, don’t be shy to get in touch.
+                <br>I prefer to connect via email.
+              </p> -->
+              <a target="_blank" href="//ua.linkedin.com/in/sergiigarkusha">LinkedIn</a>
+              <a href="mailto:con&#116;&#97;&#99;t&#64;c&#117;7&#105;o&#46;&#117;&#115;">con&#116;&#97;&#99;t&#64;c&#117;7&#105;o&#46;&#117;&#115;</a>
+              <a target="_blank" href="//twitter.com/Cu7ious">Twitter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+  <!-- <div class="the-sea-fo-tech">
                 <div class="sea-background"></div>
                 <div class="sea-foreground"></div>
-            </div>
+            </div> -->
 
-            <div class="row">
-                <div class="container auto-scrolling">
-                    <div class="row">
-                        <div class="circles">
-                            <div class="three columns">
-                                <div class="skill-card">
-                                    <div class="circle" id="container1"></div>
-                                    <i>Full Stack JavaScript</i>
-                                </div>
-                            </div>
-                            <div class="three columns">
-                                <div class="skill-card">
-                                    <div class="circle" id="container2"></div>
-                                    <i>HTML 5 / CSS 3</i>
-                                </div>
-                            </div>
-                            <div class="three columns">
-                                <div class="skill-card">
-                                    <div class="circle" id="container3"></div>
-                                    <i>UX / UI</i>
-                                </div>
-                            </div>
-                            <div class="three columns">
-                                <div class="skill-card">
-                                    <div class="circle" id="container4"></div>
-                                    <i>WordPress / PHP</i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <!-- </div> -->
 
-                </div>
-            </div>
-            </div>
-
-            <div class="my-works-block">
+  <!-- <div class="my-works-block">
                 <nav class="portfolio-filter">
                     <ul>
                         <li>JavaScript.js</li>
@@ -237,70 +395,59 @@
                         <li>WordPress</li>
                     </ul>
                 </nav>
-            </div>
+            </div> -->
 
-            <div class="row">
-                <div class="container auto-scrolling">
-                    <div class="twelve columns">
-                        <div class="get-in-touch">
-                            <h4>Get in touch with me</h4>
-                            <a target="_blank" href="//ua.linkedin.com/in/sergiigarkusha/en">LinkedIn</a>
-                            <a href="mailto:con&#116;&#97;&#99;t&#64;c&#117;7&#105;o&#46;&#117;&#115;">con&#116;&#97;&#99;t&#64;c&#117;7&#105;o&#46;&#117;&#115;</a>
-                            <a target="_blank" href="//twitter.com/Cu7ious">Twitter</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  </div>
 
+  </section>
+
+  <footer id="footer-sticky">
+    <div id="logo-footer">
+      <a href="#" id="go-up" class="go-up-event"></a>
     </div>
-    </section>
+    <nav class="row">
+      <ul class="footer-navigation">
+        <li id="menu-about" class="menu-item go-down-event"><a href="#">About</a></li>
+        <li id="menu-home" class="menu-item go-up-event"><a href="#">Home</a></li>
+        <!-- <li class="menu-item"><a target="_blank" href="//medium.com/@Cu7ious">Blog</a></li> -->
+        <li id="menu-works" class="menu-item"><a target="_blank" href="#">Works</a></li>
+        <li class="menu-item"><a target="_blank" href="//github.com/Cu7ious">GitHub</a></li>
+        <li class="menu-item"><a target="_blank" href="//linkedin.com/in/sergiigarkusha/en">LinkedIn</a></li>
+        <li class="menu-item"><a target="_blank" href="//codepen.io/Cu7ious/">CodePen</a></li>
+      </ul>
+      <p>
+        <span>&copy; 2017 Designed &amp; Coded by <a href="//cu7io.us">Cu7ious</a>.</span>
+        <!-- <span>Hosted by <a href="https://m.do.co/c/8b69920853a6" target="_blank">DigitalOcean</a></span> -->
+      </p>
+    </nav>
+  </footer>
 
-    <footer id="footer-sticky">
-        <div id="logo-footer">
-            <a href="#" id="go-up" class="go-up-event"></a>
-        </div>
-        <nav class="row">
-            <ul class="footer-navigation">
-                <li id="menu-about" class="menu-item go-down-event"><a href="#">About</a></li>
-                <li id="menu-home" class="menu-item go-up-event"><a href="#">Home</a></li>
-                <!-- <li class="menu-item"><a target="_blank" href="//medium.com/@Cu7ious">Blog</a></li> -->
-                <li id="menu-works" class="menu-item"><a target="_blank" href="#">Works</a></li>
-                <li class="menu-item"><a target="_blank" href="//github.com/Cu7ious">GitHub</a></li>
-                <li class="menu-item"><a target="_blank" href="//linkedin.com/in/sergiigarkusha/en">In</a></li>
-            </ul>
-            <p>
-                <span>&copy; 2015 Designed &amp; Coded by <a href="//cu7io.us">Cu7ious</a>.</span>
-                <span>Hosted by <a href="https://m.do.co/c/8b69920853a6">DigitalOcean</a></span>
-            </p>
-        </nav>
-    </footer>
+  <!-- Load scripts -->
+  <script type="text/javascript" src="./assets/js/preloader.js"></script>
+  <!-- <script type="text/javascript" src="./assets/js/progressbar.js"></script> -->
+  <script type="text/javascript" src="./assets/js/main.js"></script>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
 
-    <!-- Load scripts -->
-    <script type="text/javascript" src="./assets/js/preloader.js"></script>
-    <script type="text/javascript" src="./assets/js/progressbar.js"></script>
-    <script type="text/javascript" src="./assets/js/main.js"></script>
-    <script>
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      },
 
-            i[r] = i[r] || function() {
-                    (i[r].q = i[r].q || []).push(arguments)
-                },
-                i[r].l = 1 * new Date();
+      i[r].l = 1 * new Date();
 
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
+      a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
 
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
 
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-77963828-1', 'auto');
-        ga('send', 'pageview');
-
-    </script>
+    ga('create', 'UA-77963828-1', 'auto');
+    ga('send', 'pageview');
+  </script>
 </body>
 
 </html>
