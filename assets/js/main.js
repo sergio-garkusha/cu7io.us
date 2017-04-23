@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
   var FOOTER_APPEARS = 400;
-  var FOOTER_HEIGHTR = 80;
+  var TRIGGER = 80; // size of the footer
 
   var IS_FIREFOX = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
@@ -31,10 +31,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var myWorksContentTop
 
+  var myWorksContentTop
   var worksDescriptions = [
-    '<h4>SentiSum</h4><p>SentiSum provides pre-trained models, but we also create custom models depending on client requirements. Your success is our priority. We build awesome into everything we do. You can use SentiSum to understand how people feel about your products, or to automatically classify your data into custom topologies, or to see what features of your service are disappointing your clients the most.</p><a class="border-button">Check Online</a>',
-    '<h4>Zentist</h4><p>Zentist is a dental care platform to help patients find and finance their dental procedures. Zentist connects patients with top US dental clinics and delivers transparent price/quality information. Zentist achieves two major improvisations to the current process of connecting patients with dentists: It allows patients to find dentists according to their price point, as well as finance their dental procedures. Patients can engage with, share their medical info before setting up an appointment. Zentist started operations in May 2016 and looks to make $3.6M in annualized GMV this March (2017). Zentist targets a massive market: Americans pay $54B out of pocket for dental procedures annually.</p><a class="border-button">Check Online</a>',
-    '<h4>MotoPress</h4><p>MotoPress Visual Page Builder enhances the standard WordPress builder and enables to build websites visually. It’s the complete solution for building responsive pages without coding and simply by dragging and dropping content elements. MotoPress plugin is easily extendable, fully responsive and works with all WordPress themes.</p><a class="border-button">Check Online</a>',
+    '<h4>SentiSum</h4><p>Leverage AI to gain competitive advantage.</p><br/><p>Tech Stack: <ul><li> Node.js / Feathers.js / MongoDB</li><li>React.js / Webpack / Ant.d / Socket.io</li><li>Docker / AWS / NginX</li></ul></p><a target="_blank" href="//sentisum.com" class="border-button">Check Online</a>',
+    '<h4>Zentist</h4><p>Find and finance high-quality and affordable dental care</p><br/><p>Tech Stack: <ul><li>PHP FPM / Symphony / MySQL</li><li>Angular.js / React.js / SASS / jQuery</li><li>AWS / Ubuntu LEMP Stack</li></ul></p><a target="_blank" href="//zentist.io" class="border-button">Check Online</a>',
+    '<h4>MotoPress</h4><p>MotoPress Visual Page Builder enhances the standard WordPress builder and enables to build websites visually. It’s the complete solution for building responsive pages without coding and simply by dragging and dropping content elements.</p><br/><p>Tech Stack: <ul><li>Ubuntu LAMP stack</li><li>jQuery /JMVC / Grunt.js</li><li>WordPress / Composer</li></ul></p><a target="_blank" href="//getmotopress.com" class="border-button">Check Online</a>',
   ];
 
   var worksPictures = [
@@ -208,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (position > lastScrollTop) {
       // downscroll code
-      if (position > height - FOOTER_HEIGHTR) {
+      if (position > height - TRIGGER) {
         footer.classList.remove('footer-closed');
         footerLogo.style.opacity = '1';
       } else {
