@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
   var FOOTER_APPEARS = 400;
-  var TRIGGER = 80; // size of the footer
+  var FOOTER_HEIGHTR = 80;
 
   var IS_FIREFOX = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (position > lastScrollTop) {
       // downscroll code
-      if (position > height - TRIGGER) {
+      if (position > height - FOOTER_HEIGHTR) {
         footer.classList.remove('footer-closed');
         footerLogo.style.opacity = '1';
       } else {
