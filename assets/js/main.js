@@ -306,10 +306,10 @@ document.addEventListener("DOMContentLoaded", function () {
     var CNT = 0;
     var Sentences = [
       "Reactive Web Apps..",
-      "Bulletproof API's..",
+      "Bulletproof APIs..",
       "Robust WordPress Themes..",
-      "Cool WordPress Plugins..",
-      "Tasty Website Templates.."
+      "Handcrafted Plugins..",
+      "Tasty Web Templates.."
     ];
 
     var str;
