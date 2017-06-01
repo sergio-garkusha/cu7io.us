@@ -1122,55 +1122,78 @@ a:hover {
   max-width: 45%;
 }
 
+/* fade slider */
 #my-pics {
   max-width: 589px;
   height: 485px;
-  /*margin: 20px auto;*/
   position: relative;
 }
-.slide1, .slide2, .slide3 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-.slide1 {
-  background: url('../images/Cu7ious-at-Golden-Gate-Bridge-wth-Smile.jpg') no-repeat center;
-  background-size: cover;
-  animation: myPicturesFade 12s infinite;
-  -webkit-animation: myPicturesFade 12s infinite;
 
+.slide1 {
+  background: url('../images/CU7IOUS-engineer-with-beard.jpg') no-repeat center;
+  background-size: cover;
 }
 .slide2 {
-  background: url('../images/Cu7ious-at-500-Startups-SF.jpg') no-repeat center;
+  background: url('../images/Cu7ious-at-Golden-Gate-Bridge-wth-Smile.jpg') no-repeat center;
   background-size: cover;
-  animation: myPicturesFade2 12s infinite;
-  -webkit-animation: myPicturesFade2 12s infinite;
 }
 .slide3 {
+  background: url('../images/Cu7ious-at-500-Startups-SF.jpg') no-repeat center;
+  background-size: cover;
+}
+.slide4 {
   background: url('../images/CU7IOUS-digital-nomad.jpg') no-repeat center;
   background-size: cover;
-  animation: myPicturesFade3 12s infinite;
-  -webkit-animation: myPicturesFade3 12s infinite;
 }
 
-@keyframes myPicturesFade
-{
-  0%   {opacity:1}
-  33.333% { opacity: 0}
-  66.666% { opacity: 0}
-  100% { opacity: 1}
+.slides ul {
+  list-style: none;
+  position: relative;
 }
-@keyframes myPicturesFade2
-{
-  0%   {opacity:0}
-  33.333% { opacity: 1}
-  66.666% { opacity: 0 }
-  100% { opacity: 0}
+
+/* keyframe #anim_slides */
+@-webkit-keyframes anim_slides {
+  0% {
+    opacity:0;
+  }
+  6% {
+    opacity:1;
+  }
+  24% {
+    opacity:1;
+  }
+  30% {
+    opacity:0;
+  }
+  100% {
+    opacity:0;
+  }
 }
-@keyframes myPicturesFade3
-{
-  0%   {opacity:0}
-  33.333% { opacity: 0}
-  66.666% { opacity: 1}
-  100% { opacity: 0}
+
+.slides ul li {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+/* css3 animation */
+  animation-name: anim_slides;
+  animation-duration: 24.0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-delay: 0;
+  animation-play-state: running;
+  animation-fill-mode: forwards;
+  width: 100%;
+  height: 475px;
+}
+
+/* css3 delays */
+.slides ul li:nth-child(2) {
+  animation-delay: 6.0s;
+}
+.slides ul li:nth-child(3) {
+  animation-delay: 12.0s;
+}
+.slides ul li:nth-child(4) {
+  animation-delay: 18.0s;
 }
