@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
 
   "use strict";
 
@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var FOOTER_HEIGHT = 80;
 
   var IS_FIREFOX = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+  var IS_CHROME_61 = getChromeVersion()
 
   var scrolling = false;
   var lastScroll;
@@ -31,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var myWorksContentTop
 
-  var myWorksContentTop
   var worksDescriptions = [
     '<h4>SentiSum</h4><p>Leverage AI to gain competitive advantage.</p><br/><p>Tech Stack: <ul><li> Node.js / Feathers.js / MongoDB</li><li>React.js / Webpack / Ant.d / Socket.io</li><li>Docker / AWS / NginX</li></ul></p><a target="_blank" href="//sentisum.com" class="border-button">Check Online</a>',
     '<h4>Zentist</h4><p>Find and finance high-quality and affordable dental care</p><br/><p>Tech Stack: <ul><li>PHP FPM / Symphony / MySQL</li><li>Angular.js / React.js / SASS / jQuery</li><li>AWS / Ubuntu LEMP Stack</li></ul></p><a target="_blank" href="//zentist.io" class="border-button">Check Online</a>',
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var cRight = document.getElementById('content-right');
   var closex = document.getElementById('closex');
 
-// works section {
+  // works section {
   function worksCloseActions() {
     setTimeout(function() {
       cLeft.classList.remove('show');
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
       worksCloseActions();
     }
   })
-// works section END }
+  // works section END }
 
   works.forEach(function(el, idx) {
     el.addEventListener("click", function(e) {
@@ -120,13 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }, true);
   });
 
-  // function initCircles() {
-  //   makeCircle('container1', 0.95, highColor);
-  //   makeCircle('container2', 0.95, highColor);
-  //   makeCircle('container3', 0.95, lowColor);
-  //   makeCircle('container4', 0.95, lowColor);
-  // }
-
   function setHeight(el) {
     var elHeight = document.body.offsetHeight;
     el.style.height = elHeight + 'px';
@@ -135,41 +128,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function scrollTo(element, to, duration) {
     if (duration <= 0) return;
+
     var difference = to - element.scrollTop;
     var perTick = difference / duration * 10;
 
-    setTimeout(function () {
+    setTimeout(function() {
       element.scrollTop = element.scrollTop + perTick;
       if (element.scrollTop === to) return;
       scrollTo(element, to, duration - 10);
     }, 10);
   }
 
-  // function makeCircle(DOMel, qty, color) {
-  //   var element = document.getElementById(DOMel);
-  //   var circle = new ProgressBar.Circle(element, {
-  //     color: color,
-  //     trailColor: '#e6e6e6',
-  //     trailWidth: 2,
-  //     duration: 2000,
-  //     easing: 'easeOut',
-  //     strokeWidth: 4,
-  //     text: {
-  //       value: '0'
-  //     },
+  // Google Chrome changed scrollTop behaviour since version 61+
+  // Previously it worked with the `body` element,
+  // Now it works only with the `html` element.
+  // To support older version of Chrome/Chromium
+  // and Safari (it utilizes the same behaviour as older Chrome)
+  // we need to check the version of browser and adopt our solution to it
   //
-  //     // Set default step function for all animate calls
-  //     step: function (state, circle) {
-  //       circle.setText((circle.value() * 100).toFixed(0));
-  //     }
-  //   });
-  //
-  //   circle.animate(qty);
-  // }
+  // Code was taken from here:
+  // https://stackoverflow.com/questions/4900436/how-to-detect-the-installed-chrome-version#answer-4900484
+  function getChromeVersion () {
+    var raw = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
+    return raw ? parseInt(raw[2], 10) : false;
+  }
   // Utils END
 
-
-  window.addEventListener('scroll', function () {
+  window.addEventListener('scroll', function() {
 
     if (scrolling === false) {
       fade();
@@ -177,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     scrolling = true;
 
-    setTimeout(function () {
+    setTimeout(function() {
       scrolling = false;
       fade();
     }, 0);
@@ -189,22 +174,18 @@ document.addEventListener("DOMContentLoaded", function () {
   setHeight(header);
 
   if (window.scrollY > contentTop) {
-    // initCircles();
     progressSetter = true;
   }
 
-  window.addEventListener("resize", function () {
-    setTimeout(function () {
+  window.addEventListener("resize", function() {
+    setTimeout(function() {
       setHeight(header);
       myWorksContentTop = null;
     }, 200);
   })
 
-  window.addEventListener("scroll", function () {
+  window.addEventListener("scroll", function() {
     var position = window.scrollY;
-
-    // console.log(position);
-
     height = document.body.scrollHeight - document.body.offsetHeight;
 
     if (position > lastScrollTop) {
@@ -216,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
         footer.classList.add('footer-closed');
       }
 
-      setTimeout(function () {
+      setTimeout(function() {
         menuAbout.style.display = 'none';
         menuHome.style.display = 'block';
 
@@ -225,24 +206,21 @@ document.addEventListener("DOMContentLoaded", function () {
         if (counter === 0) {
           if (position + FOOTER_APPEARS > footerOffset) {
             if (!progressSetter) {
-              // initCircles();
               progressSetter = true;
             }
           }
 
-          setTimeout(function () {
+          setTimeout(function() {
             counter = 1;
           }, 800);
         }
 
       }, 600);
-      // console.log('down');
     } else {
       // upscroll code
-      // footer.classList.add('footer-closed');
       footerLogo.style.opacity = '0';
 
-      setTimeout(function () {
+      setTimeout(function() {
 
         footer.classList.remove('footer-closed');
 
@@ -251,27 +229,30 @@ document.addEventListener("DOMContentLoaded", function () {
           menuHome.style.display = 'none';
         }
 
-        // setTimeout(function () {
-          counter = 0;
-        // }, 800);
+        counter = 0;
 
       }, 100);
-      // console.log('up');
     }
 
-    setTimeout(function () {
+    setTimeout(function() {
       lastScrollTop = position;
     }, 810);
   });
 
   // Animate Scrolling to content on click on the elements
+  (function() {
+
+  })()
   var goDownElements = document.getElementsByClassName('go-down-event');
-  var elToScroll = IS_FIREFOX ? document.getElementsByTagName('html')[0] : document.body
+  var elToScroll = (IS_FIREFOX || IS_CHROME_61 && IS_CHROME_61 >= 61)
+    ? document.getElementsByTagName('html')[0]
+    : document.body
   goDownElements = Array.prototype.slice.call(goDownElements);
-  goDownElements.forEach(function (el) {
-    el.addEventListener('click', function (e) {
+  goDownElements.forEach(function(el) {
+    el.addEventListener('click', function(e) {
       e.preventDefault();
       var contentTop = document.getElementById('content').getBoundingClientRect().top;
+      console.log(contentTop);
       scrollTo(elToScroll, contentTop, 500);
     }, false);
   });
@@ -279,23 +260,26 @@ document.addEventListener("DOMContentLoaded", function () {
   // Animate Scrolling to content on click on the elements
   (function() {
     var toWorks = document.getElementById('menu-works');
-    toWorks.addEventListener('click', function (e) {
+    toWorks.addEventListener('click', function(e) {
       e.preventDefault();
-      var elToScroll = IS_FIREFOX ? document.getElementsByTagName('html')[0] : document.body
+      var elToScroll = (IS_FIREFOX || IS_CHROME_61 && IS_CHROME_61 >= 61)
+        ? document.getElementsByTagName('html')[0]
+        : document.body
       myWorksContentTop = myWorksContentTop
         ? myWorksContentTop
         : document.getElementById('portfolio').getBoundingClientRect().top;
-      console.log(myWorksContentTop);
       scrollTo(elToScroll, myWorksContentTop, 500);
     }, false);
   })()
 
   // Animate Scrolling to top on click on the elements
-  var goDownElements = document.getElementsByClassName('go-up-event');
-  var elToScroll = IS_FIREFOX ? document.getElementsByTagName('html')[0] : document.body
-  goDownElements = Array.prototype.slice.call(goDownElements);
-  goDownElements.forEach(function (el) {
-    el.addEventListener('click', function (e) {
+  var goUpElements = document.getElementsByClassName('go-up-event');
+  var elToScroll = (IS_FIREFOX || IS_CHROME_61 && IS_CHROME_61 >= 61)
+    ? document.getElementsByTagName('html')[0]
+    : document.body
+  goUpElements = Array.prototype.slice.call(goUpElements);
+  goUpElements.forEach(function(el) {
+    el.addEventListener('click', function(e) {
       e.preventDefault();
       scrollTo(elToScroll, 0, 1000);
     }, false);
@@ -316,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var i = 0;
     var isTag, text;
 
-    function type () {
+    function type() {
       text = str.slice(0, i++);
       if (text === str) {
         i = 0;
@@ -329,14 +313,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(function() {
       if (CNT > 3) CNT = 0;
-      var evt = new CustomEvent('type-header-text', {detail: {
-        sentence: Sentences[CNT]
-      }});
+      var evt = new CustomEvent('type-header-text', {
+        detail: {
+          sentence: Sentences[CNT]
+        }
+      });
       CNT = CNT + 1;
       window.dispatchEvent(evt);
     }, 5000)
 
-    window.addEventListener('type-header-text', function (e) {
+    window.addEventListener('type-header-text', function(e) {
       str = e.detail.sentence;
       type();
     }, false);
