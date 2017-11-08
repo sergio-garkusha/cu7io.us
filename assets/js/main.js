@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Now it works only with the `html` element.
   // To support older version of Chrome/Chromium
   // and Safari (it utilizes the same behaviour as older Chrome)
-  // we need to check the version of browser and adopt our solution to it
+  // we need to check the version of browser and adapt our solution to it
   //
   // Code was taken from here:
   // https://stackoverflow.com/questions/4900436/how-to-detect-the-installed-chrome-version#answer-4900484
