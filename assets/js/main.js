@@ -1,3 +1,4 @@
+// Vanilla JavaScript (Standard ECMA-262 5.1 Edition / June 2011)
 document.addEventListener("DOMContentLoaded", function() {
 
   "use strict";
