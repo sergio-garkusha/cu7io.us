@@ -290,16 +290,18 @@ document.addEventListener("DOMContentLoaded", function() {
   (function() {
     var CNT = 0;
     var Sentences = [
-      "Reactive Web Apps..",
       "Bulletproof APIs..",
-      "Robust WordPress Themes..",
-      "Handcrafted Plugins..",
-      "Tasty Web Templates.."
+      "Docker Containers..",
+      "Zen of Python..",
+      "Reach Types like ReasonML's..",
+      "Good Old C Language..",
+      "And Tasty Designs..",
+      "Reactive Web Apps.."
     ];
 
     var str;
     var i = 0;
-    var isTag, text;
+    var text;
 
     function type() {
       text = str.slice(0, i++);
@@ -313,13 +315,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     setInterval(function() {
-      if (CNT > 3) CNT = 0;
+      if (CNT > Sentences.length)
+        CNT = 0;
+
       var evt = new CustomEvent('type-header-text', {
         detail: {
           sentence: Sentences[CNT]
         }
       });
-      CNT = CNT + 1;
+
+      CNT++;
+
       window.dispatchEvent(evt);
     }, 5000)
 
