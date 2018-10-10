@@ -65,7 +65,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 body {
   /*background-color: rgba(0, 0, 0, 0) !important;*/
-  background: url('../svg/TECH_SEA.svg') no-repeat center top transparent !important;
+  /* background: url('../svg/TECH_SEA.svg') no-repeat center top transparent !important; */
   font-family: "Source Sans Pro", sans-serif !important;
   background-attachment: fixed;
   background-size: cover;

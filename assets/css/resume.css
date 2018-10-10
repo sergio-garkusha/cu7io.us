@@ -1,0 +1,137 @@
+.doc-wrapper {
+    width: 1072px;
+    /* height: 1192px; */
+    margin: 0 auto 0;
+    padding: 50px;
+}
+
+.doc {
+    padding: 50px;
+    /* background-color: #ededed; */
+    box-shadow: 0px 2px 24px 1px #ececec;
+}
+
+.doc h1 {
+    font-size: 34px;
+    padding: 0
+}
+
+.doc h2 {
+    text-align: left;
+    padding-bottom: 35px;
+}
+
+.doc h3 {
+    width: 100%;
+    color: #464646;
+}
+
+.doc h4 {
+    color: #555;
+}
+
+.doc h5 b {
+    color: #656565;
+}
+
+.doc h6 {
+    font-weight: bold;
+    color: #555;
+}
+
+.doc b {
+    font-weight: bold;
+}
+
+.doc sup {
+    vertical-align: super;
+    font-size: 12px;
+}
+
+header {
+    overflow: hidden;
+}
+
+.top-contacts {
+    padding: 0 40px 0 0;
+}
+
+.top-socials {
+    margin-left: 55px;
+}
+
+.tech-skills-and-achievements,
+.education {
+    margin-top: 20px;
+}
+
+.list-of-achievments,
+.prof-experience ul {
+    list-style: inside square;
+}
+
+.prof-experience {
+    margin-top: 20px;
+}
+
+.prof-experience h5 i,
+.prof-experience h5 span,
+.education h5 i,
+.education h5 span {
+    font-size: 16px;
+}
+
+.prof-experience h5 span,
+.education h5 span {
+    float: right;
+    line-height: 35px;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; */
+    cursor: help;
+    /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    left: 125%;
+    bottom: -125%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #555 transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}

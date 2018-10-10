@@ -4,12 +4,11 @@
   "description": "Personal website of the web professional",
   "main": "server.js",
   "scripts": {
-    "server": "./node_modules/.bin/static-server"
+    "start": "python3 -m http.server"
   },
   "author": "Cu7ious",
   "license": "GPLv.3+",
   "devDependencies": {
-    "static-server": "^2.0.3",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-cssmin": "^0.14.0",
