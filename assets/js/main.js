@@ -295,6 +295,7 @@ document.addEventListener("DOMContentLoaded", function() {
       "Zen of Python..",
       "Reach Types like ReasonML's..",
       "Good Old C Language..",
+      "Playing with Neuro Nets..",
       "And Tasty Designs..",
       "Reactive Web Apps.."
     ];
