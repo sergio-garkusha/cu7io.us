@@ -286,7 +286,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }, false);
   });
 
-  // Typewriter
+  // Typewriter feature
   (function() {
     var CNT = 0;
     var Sentences = [
@@ -296,7 +296,7 @@ document.addEventListener("DOMContentLoaded", function() {
       "Reach Types like ReasonML's..",
       "Good Old C Language..",
       "Playing with Neuro Nets..",
-      "And Tasty Designs..",
+      "Tasty Designs..",
       "Reactive Web Apps.."
     ];
 
@@ -306,10 +306,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function type() {
       text = str.slice(0, i++);
+
       if (text === str) {
         i = 0;
         return
       };
+
       document.getElementById('created-item-text').innerText = text;
       var char = text.slice(-1);
       setTimeout(type, 80);
