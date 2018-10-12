@@ -2,6 +2,10 @@ body {
     background-color: #ededed !important;
 }
 
+p {
+    margin: 0 0 10px 0 !important;
+}
+
 .doc-wrapper {
     width: 1072px;
     margin: 0 auto 0;
