@@ -188,6 +188,7 @@ nav #logo img {
   color: #FFF;
   display: inline-block;
 }
+
 #footer-sticky p a::after {
   display: block;
   width: 0;
@@ -197,6 +198,7 @@ nav #logo img {
   content: "";
   transition: width 0.2s;
 }
+
 #footer-sticky p a:hover::after {
   width: 100%;
 }
@@ -215,9 +217,11 @@ nav #logo img {
   content: "";
   transition: width 0.2s;
 }
+
 .footer-navigation a:hover::after {
   width: 100%;
 }
+
 .footer-navigation > li {
   float: right;
   position: relative;

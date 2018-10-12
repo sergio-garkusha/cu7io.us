@@ -2,10 +2,6 @@ body {
     background-color: #ededed !important;
 }
 
-p {
-    margin: 0 0 10px 0 !important;
-}
-
 .doc-wrapper {
     width: 1072px;
     margin: 0 auto 0;
@@ -57,6 +53,44 @@ p {
     font-size: 12px;
 }
 
+.doc p {
+    margin: 0 0 10px 0 !important;
+}
+
+.doc a {
+    transition: color 0.2s ease;
+}
+
+.doc p a {
+    color: #0000009a;
+    display: inline-block;
+}
+
+.doc p a sup {
+    color: #0000009a;
+}
+
+.doc a:hover {
+    color: #000 !important;
+    cursor: pointer;
+}
+
+.doc p a::after,
+.doc .top-socials a::after {
+    display: block;
+    width: 0;
+    margin: 0 auto 0;
+    height: 1px;
+    background-color: #000;
+    content: "";
+    transition: width 0.2s;
+}
+
+.doc p a:hover::after,
+.doc .top-socials a:hover::after {
+    width: 100%;
+}
+
 header {
     overflow: hidden;
 }
@@ -67,6 +101,10 @@ header {
 
 .top-socials {
     margin-left: 55px;
+}
+
+.top-socials a {
+    display: inline-block;
 }
 
 .tech-skills-and-achievements,
@@ -110,7 +148,7 @@ header {
     visibility: hidden;
     width: 200px;
     background-color: #555;
-    color: #fff;
+    color: #000;
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
@@ -153,10 +191,10 @@ header {
 
 .material-buttons ul li {
     width: 56px;
-    height: 56px;
-    background-color: #ce1e00;
-    color: #fff;
-    border-bottom: 4px solid #a00000;
+    height: 57px;
+    background-color: #ffffff;
+    color: #000;
+    border-bottom: 4px solid #cecece;
     position: relative;
     border-radius: 56px;
     text-align: center;
@@ -168,11 +206,11 @@ header {
 }
 
 .material-buttons ul li.secondary {
-    display: none;
+    /* display: none; */
     width: 36px;
     height: 36px;
     border-radius: 36px;
-    border-bottom: 3px solid #a00000;
+    border-bottom: 3px solid #cecece;
     font-size: 22px;
     line-height: 36px;
     margin-left: 10px;
@@ -181,19 +219,20 @@ header {
 
 .material-buttons ul li#edit-content span {
     top: 6px;
-    left: -99px;
+    left: -55px;
 }
 
 .material-buttons ul li span {
     position: absolute;
     font-size: 12px;
-    padding: 2px 8px;
-    top: 19px;
-    background-color: rgba(43, 43, 43, .67);
+    padding: 5px 8px;
+    top: 17px;
+    background-color: #ffffff;
     max-height: 25px;
     border-radius: 3px;
     font-weight: bold;
-    left: -97px;
+    left: -101px;
+    box-shadow: 0px 2px 3px 0px #00000030;
     line-height: 17px;
 }
 
