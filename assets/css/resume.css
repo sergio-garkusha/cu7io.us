@@ -31,6 +31,10 @@ body {
     color: #464646;
 }
 
+.doc h3 a {
+    color: #464646;
+}
+
 .doc h4 {
     color: #555;
 }
