@@ -1,0 +1,260 @@
+body {
+    background-color: #ededed !important;
+}
+
+.doc-wrapper {
+    width: 1072px;
+    margin: 0 auto 0;
+    padding: 50px;
+}
+
+.doc {
+    padding: 50px;
+    box-shadow: 0px 2px 24px 1px #ccc;
+    background-color: #fff;
+}
+
+.doc h1 {
+    /* font-size: 34px; */
+    font-size: 2.12rem;
+    padding: 0
+}
+
+.doc h2 {
+    text-align: left;
+    font-size: 2.25rem;
+    padding-bottom: 35px;
+}
+
+.doc h3 {
+    width: 100%;
+    color: #464646;
+}
+
+.doc h3 a {
+    color: #464646;
+}
+
+.doc h4 {
+    color: #555;
+}
+
+.doc h5 b {
+    color: #656565;
+}
+
+.doc h6 {
+    font-weight: bold;
+    color: #555;
+}
+
+.doc b {
+    font-weight: bold;
+}
+
+.doc sup {
+    vertical-align: super;
+    font-size: 12px;
+}
+
+.doc p {
+    margin: 0 0 10px 0 !important;
+}
+
+.doc a {
+    transition: color 0.2s ease;
+}
+
+.doc p a {
+    color: #0000009a;
+    display: inline-block;
+}
+
+.doc p a sup {
+    color: #0000009a;
+}
+
+.doc a:hover {
+    color: #000 !important;
+    cursor: pointer;
+}
+
+.doc p a::after,
+.doc .top-socials a::after {
+    display: block;
+    width: 0;
+    margin: 0 auto 0;
+    height: 1px;
+    background-color: #000;
+    content: "";
+    transition: width 0.2s;
+}
+
+.doc p a:hover::after,
+.doc .top-socials a:hover::after {
+    width: 100%;
+}
+
+header {
+    overflow: hidden;
+}
+
+.top-contacts {
+    padding: 0 40px 0 0;
+}
+
+.top-socials {
+    margin-left: 55px;
+}
+
+.top-socials a {
+    display: inline-block;
+}
+
+.tech-skills-and-achievements,
+.education {
+    margin-top: 20px;
+}
+
+.list-of-achievments,
+.prof-experience ul {
+    list-style: inside square;
+}
+
+.prof-experience {
+    margin-top: 20px;
+}
+
+.prof-experience h5 i,
+.prof-experience h5 span,
+.education h5 i,
+.education h5 span {
+    font-size: 16px;
+}
+
+.prof-experience h5 span,
+.education h5 span {
+    float: right;
+    line-height: 35px;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; */
+    cursor: help;
+    /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #000;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    left: 125%;
+    bottom: -125%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #555 transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.material-buttons {
+    position: fixed;
+    right: 35px;
+    bottom: 20px;
+}
+
+.material-buttons ul li {
+    width: 56px;
+    height: 57px;
+    background-color: #ffffff;
+    color: #000;
+    border-bottom: 4px solid #cecece;
+    position: relative;
+    border-radius: 56px;
+    text-align: center;
+    font-size: 32px;
+    line-height: 62px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
+    cursor: pointer;
+    font-family: Roboto, sans-serif;
+}
+
+.material-buttons ul li.secondary {
+    /* display: none; */
+    width: 36px;
+    height: 36px;
+    border-radius: 36px;
+    border-bottom: 3px solid #cecece;
+    font-size: 22px;
+    line-height: 36px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.material-buttons ul li#edit-content span {
+    top: 6px;
+    left: -55px;
+}
+
+.material-buttons ul li span {
+    position: absolute;
+    font-size: 12px;
+    padding: 5px 8px;
+    top: 17px;
+    background-color: #ffffff;
+    max-height: 25px;
+    border-radius: 3px;
+    font-weight: bold;
+    left: -101px;
+    box-shadow: 0px 2px 3px 0px #00000030;
+    line-height: 17px;
+}
+
+@media print {
+    body {
+        background-color: #fff !important;
+    }
+
+    .doc-wrapper {
+        padding: 10px;
+    }
+
+    .doc {
+        background-color: transparent;
+        box-shadow: 0 0 0 0;
+    }
+
+    .material-buttons {
+        display: none;
+    }
+}

@@ -9,3 +9,8 @@ This is the repo of my website. Feel free to fork
 3. HTML 5
 4. Google Analytics
 ```
+
+### To devepol locally
+```sh
+./dev-server.sh
+```

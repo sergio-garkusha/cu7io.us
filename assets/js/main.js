@@ -286,40 +286,49 @@ document.addEventListener("DOMContentLoaded", function() {
     }, false);
   });
 
-  // Typewriter
+  // Typewriter feature
   (function() {
     var CNT = 0;
     var Sentences = [
-      "Reactive Web Apps..",
       "Bulletproof APIs..",
-      "Robust WordPress Themes..",
-      "Handcrafted Plugins..",
-      "Tasty Web Templates.."
+      "Docker Containers..",
+      "Zen of Python..",
+      "Reach Types like ReasonML's..",
+      "Good Old C Language..",
+      "Playing with Neuro Nets..",
+      "Tasty Designs..",
+      "Reactive Web Apps.."
     ];
 
     var str;
     var i = 0;
-    var isTag, text;
+    var text;
 
     function type() {
       text = str.slice(0, i++);
+
       if (text === str) {
         i = 0;
         return
       };
+
       document.getElementById('created-item-text').innerText = text;
       var char = text.slice(-1);
       setTimeout(type, 80);
     }
 
     setInterval(function() {
-      if (CNT > 3) CNT = 0;
+      if (CNT > Sentences.length)
+        CNT = 0;
+
       var evt = new CustomEvent('type-header-text', {
         detail: {
           sentence: Sentences[CNT]
         }
       });
-      CNT = CNT + 1;
+
+      CNT++;
+
       window.dispatchEvent(evt);
     }, 5000)
 
