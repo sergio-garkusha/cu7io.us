@@ -1,3 +1,2 @@
-#!/bin/bash
-
-npm run server
+#!/usr/bin/env bash
+python3 -m http.server
