@@ -6,5 +6,5 @@ if [ -f "$FILE" ]; then
     rm -rf .git .gitignore Gruntfile.js dev-server.sh package.json README.md
 else 
     echo "$FILE does not exist."
-    git clone https://github.com/Cu7ious/cu7io.us.git
+    git clone https://github.com/Cu7ious/cu7io.us.git && cd cu7io.us && mv * .. && cd .. && rm -rf cu7io.us
 fi
