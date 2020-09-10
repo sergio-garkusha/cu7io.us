@@ -288,46 +288,50 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Typewriter feature
   (function() {
-    var CNT = 0;
-    var Sentences = [
-      "Bulletproof APIs..",
-      "Docker Containers..",
-      "Zen of Python..",
-      "Reach Types like ReasonML's..",
-      "Good Old C Language..",
-      "Playing with Neuro Nets..",
-      "Tasty Designs..",
-      "Reactive Web Apps.."
+    var cnt = 0;
+    var sentences = [
+      "Zen of glorious Python.",
+      "Expressive Nim language.",
+      "Handcrafted Tasty Designs.",
+      "Progressive and accessive Apps.",
+      "Bulletproof servers & APIs.",
+      "Swarmy Docker Containers.",
+      "Playin' with Neuro Nets.",
+      "Good old vanilla JavaScript."
     ];
 
     var str;
-    var i = 0;
+    var i = 1;
     var text;
 
     function type() {
       text = str.slice(0, i++);
 
+      // console.log(text, str);
+
+      document.getElementById('created-item-text').innerText = text;
+      text.slice();
+
       if (text === str) {
-        i = 0;
+        i = 1;
         return
       };
 
-      document.getElementById('created-item-text').innerText = text;
-      var char = text.slice(-1);
       setTimeout(type, 80);
     }
 
     setInterval(function() {
-      if (CNT > Sentences.length)
-        CNT = 0;
+      if (cnt === sentences.length) {
+        cnt = 0;
+      }
 
       var evt = new CustomEvent('type-header-text', {
         detail: {
-          sentence: Sentences[CNT]
+          sentence: sentences[cnt]
         }
       });
 
-      CNT++;
+      cnt++;
 
       window.dispatchEvent(evt);
     }, 5000)
