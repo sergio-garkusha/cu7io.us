@@ -223,7 +223,7 @@ header {
 
 .material-buttons ul li#edit-content span {
     top: 6px;
-    left: -55px;
+    left: -85px;
 }
 
 .material-buttons ul li span {
@@ -235,7 +235,7 @@ header {
     max-height: 25px;
     border-radius: 3px;
     font-weight: bold;
-    left: -101px;
+    left: -140px;
     box-shadow: 0px 2px 3px 0px #00000030;
     line-height: 17px;
 }
