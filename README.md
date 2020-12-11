@@ -11,7 +11,7 @@ This is the repo of my website. Feel free to fork
 5. Google Analytics
 ```
 
-### To devepol locally
+### To develop locally
 ```sh
 ./dev-server.sh
 ```
