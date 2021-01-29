@@ -36,9 +36,10 @@ jobs:
         uses: appleboy/scp-action@v0.1.1
         with:
           host: ${{ secrets.REMOTE_HOST }}
+          port: ${{ secrets.SSH_PORT }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.KEY }}
-          passphrase: ""
+          passphrase: ${{ secrets.KEY_PASSPHRASE }}
           rm: true
           source: "a.txt"
           target: "${{ secrets.REMOTE_DIR }}/test"
