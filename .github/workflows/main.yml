@@ -35,6 +35,7 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.KEY }}
+          passphrase: ""
           rm: true
           source: "dist/"
           target: "${{ secrets.REMOTE_DIR }}"
