@@ -29,6 +29,9 @@ jobs:
       # - name: Build
       #  run: ./temp_dep.sh
 
+      - name: Create
+        run: touch a.txt
+        
       - name: Copying files to server
         uses: appleboy/scp-action@v0.1.1
         with:
@@ -37,5 +40,5 @@ jobs:
           key: ${{ secrets.KEY }}
           passphrase: ""
           rm: true
-          source: "tests/a.txt,tests/b.txt"
+          source: "a.txt"
           target: "${{ secrets.REMOTE_DIR }}/test"
