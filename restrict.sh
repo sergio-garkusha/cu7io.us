@@ -2,8 +2,9 @@
 
 if [ -z "$1" ]; then
     chmod 600 action_man.sh dev-server.sh .gitignore Gruntfile.js package.json README.md temp_dep.sh restrict.sh
-    chmod 644 -R assets .git .github
+    chmod 600 -R .git .github
+    chmod 645 -R assets
     chmod 644 index.html resume.html
 else
-    sudo chmod -R 744 .
+    sudo chmod -R 777 .
 fi
