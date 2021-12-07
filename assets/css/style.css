@@ -48,6 +48,13 @@ p {
   line-height: 30px;
 }
 
+body code {
+  background-color: #eee;
+  border-radius: 3px;
+  font-family: courier, monospace;
+  padding: 1px 3px;
+}
+
 /* Selected text Color */
 
 ::-moz-selection {
@@ -1058,7 +1065,7 @@ a:hover {
 #portfolio .portfolio-row.row h2 {
   font-style: italic;
   padding-bottom: 0;
-  padding-top: 50px;
+  padding-top: 0;
 }
 
 #portfolio .portfolio-row.row h3 {
