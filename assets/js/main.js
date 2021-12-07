@@ -1,50 +1,31 @@
-// Vanilla JavaScript (Standard ECMA-262 5.1 Edition / June 2011)
+// Vanilla JavaScript (helps to deepen knowledge and learn to appreciate frameworks more :)
+// Dated code with modern modifications
 document.addEventListener("DOMContentLoaded", function() {
+  const IS_FIREFOX = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+  const IS_CHROME_61 = getChromeVersion()
 
-  "use strict";
+  let scrolling = false;
+  let lastScroll;
 
-  var FOOTER_APPEARS = 400;
-  var FOOTER_HEIGHT = 80;
+  const heroTitle = document.getElementById('hero-title');
+  const mainLogo = document.getElementById('logo-large-screens');
+  const goDownButton = document.getElementById('go-down');
 
-  var IS_FIREFOX = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-  var IS_CHROME_61 = getChromeVersion()
-
-  var scrolling = false;
-  var lastScroll;
-
-  var heroTitle = document.getElementById('hero-title');
-  var mainLogo = document.getElementById('logo-large-screens');
-  var goDownButton = document.getElementById('go-down');
-
-  var highColor = 'rgb(98, 40, 140)';
-  var lowColor = 'rgb(32, 152, 132)';
+  // Just in case :_)
+  // const highColor = 'rgb(98, 40, 140)';
+  // const lowColor = 'rgb(32, 152, 132)';
 
   var lastScrollTop = 0;
   var progressSetter = false;
   var counter = 0;
-  var height;
   var header = document.getElementById('header');
   var contentTop = document.getElementById('content').getBoundingClientRect().top;
 
   var footer = document.getElementById('footer-sticky');
   var footerLogo = document.getElementById('logo-footer');
+
   var menuHome = document.getElementById('menu-home');
   var menuAbout = document.getElementById('menu-about');
-
-  var myWorksContentTop
-
-  var worksDescriptions = [
-    '<h4>Workday Extend</h4><p>Workday Extend empowers customers to confidently build, deploy, and manage new business capabilities for finance and HR. Architected on the same platform as Workday\'s applications, Extend delivers enterprise scale and speeds development. <a target="_blank" href="https://blog.workday.com/en-us/2021/workday-extend-building-new-business-capabilities-hr-finance-speed-simplicity.html">Read More »</a></p><br/><p>Tech Stack: <ul><li> Node.js + Express.js / Golang + Echo </li><li>TypeScript + React.js / Webpack</li><li>Workday Canvas Kit</li><li>AWS + Docker</li></ul></p><a target="_blank" href="https://developer.workday.com" class="border-button">Check Online</a>',
-    '<h4>Zentist</h4><p>Find and finance high-quality and affordable dental care</p><br/><p>Tech Stack: <ul><li>PHP FPM / Symphony / MySQL</li><li>Angular.js / React.js / SASS / jQuery</li><li>AWS / Ubuntu LEMP Stack</li></ul></p><a target="_blank" href="//zentist.io" class="border-button">Check Online</a>',
-    '<h4>MotoPress</h4><p>MotoPress Visual Page Builder enhances the standard WordPress builder and enables to build websites visually. It’s the complete solution for building responsive pages without coding and simply by dragging and dropping content elements.</p><br/><p>Tech Stack: <ul><li>Ubuntu LAMP stack</li><li>jQuery /JMVC / Grunt.js</li><li>WordPress / Composer</li></ul></p><a target="_blank" href="//getmotopress.com" class="border-button">Check Online</a>',
-  ];
-
-  var worksPictures = [
-    '<img src="./assets/images/wday-01.jpg"><div style="position:relative;height:0;padding-bottom:75.0%"><iframe width="560" height="315" src="https://www.youtube.com/embed/E4Oat7Lakuo" title="Workday Extend" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>',
-    '<img src="./assets/images/Senti1.png"><img src="./assets/images/Senti2.png"><img src="./assets/images/Senti3.png">',
-    '<img src="./assets/images/zent5.jpg"><img src="./assets/images/zent2.jpg"><img src="./assets/images/zent3.jpg"><img src="./assets/images/zent4.jpg"><img src="./assets/images/zent.jpg">',
-    '<img src="./assets/images/moto2.jpg"><img src="./assets/images/Moto4.png"><img src="./assets/images/moto3.png"><div style="position:relative;height:0;padding-bottom:75.0%"><iframe src="https://www.youtube.com/embed/Q8fdnBmwtOY?ecver=2" width="480" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>'
-  ];
 
   // Utils
   function fade() {
@@ -63,11 +44,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  var works = document.querySelectorAll('.work-item');
-  var workDetails = document.getElementById('works-container');
-  var cLeft = document.getElementById('content-left');
-  var cRight = document.getElementById('content-right');
-  var closex = document.getElementById('closex');
+  const works = document.querySelectorAll('.work-item');
+  const workDetails = document.getElementById('works-container');
+  const cLeft = document.getElementById('content-left');
+  const cRight = document.getElementById('content-right');
+  const closeX = document.getElementById('closex');
 
   // works section {
   function worksCloseActions() {
@@ -87,40 +68,44 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 1200);
   }
 
-  closex.addEventListener("click", function(e) {
+  closeX.addEventListener("click", function(e) {
     worksCloseActions();
   }, true);
   workDetails.addEventListener("click", function(e) {
     worksCloseActions();
   }, true);
   document.addEventListener('keyup', function(e) {
-    if (e.keyCode == 27) {
+    if (e.keyCode === 27) {
       worksCloseActions();
     }
-  })
-  // works section END }
-
-  works.forEach(function(el, idx) {
-    el.addEventListener("click", function(e) {
-      e.preventDefault();
-
-      document.getElementById('cont').innerHTML = worksDescriptions[idx]
-      document.getElementById('img').innerHTML = worksPictures[idx]
-
-      workDetails.style.display = 'block';
-      document.body.style.overflow = 'hidden';
-
-      setTimeout(function() {
-        workDetails.style.opacity = '1';
-        workDetails.style.visibility = 'visible';
-      }, 200);
-
-      setTimeout(function() {
-        cLeft.classList.add('show');
-        cRight.classList.add('show');
-      }, 500);
-    }, true);
   });
+
+  (async () => {
+    const projects = await fetch('/assets/projects/projects.json').then(r => r.json());
+    const { projectDescriptions, projectPictures } = projects;
+    works.forEach(function (el, idx) {
+      el.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        document.getElementById('cont').innerHTML = projectDescriptions[idx];
+        document.getElementById('img').innerHTML = projectPictures[idx];
+
+        workDetails.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+
+        setTimeout(function () {
+          workDetails.style.opacity = '1';
+          workDetails.style.visibility = 'visible';
+        }, 200);
+
+        setTimeout(function () {
+          cLeft.classList.add('show');
+          cRight.classList.add('show');
+        }, 500);
+      }, true);
+    });
+  })();
+  // works section END }
 
   function setHeight(el) {
     var elHeight = document.body.offsetHeight;
@@ -179,15 +164,19 @@ document.addEventListener("DOMContentLoaded", function() {
     progressSetter = true;
   }
 
+  let projectsContentTop;
   window.addEventListener("resize", function() {
     setTimeout(function() {
       setHeight(header);
-      myWorksContentTop = null;
+      projectsContentTop = null;
     }, 200);
   })
 
+  const FOOTER_APPEARS = 400;
+  const FOOTER_HEIGHT = 80;
+  let height;
   window.addEventListener("scroll", function() {
-    var position = window.scrollY;
+    const position = window.scrollY;
     height = document.body.scrollHeight - document.body.offsetHeight;
 
     if (position > lastScrollTop) {
@@ -242,10 +231,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // Animate Scrolling to content on click on the elements
-  (function() {
-
-  })()
-  var goDownElements = document.getElementsByClassName('go-down-event');
+  let goDownElements = document.getElementsByClassName('go-down-event');
   var elToScroll = (IS_FIREFOX || IS_CHROME_61 && IS_CHROME_61 >= 61)
     ? document.getElementsByTagName('html')[0]
     : document.body
@@ -253,8 +239,8 @@ document.addEventListener("DOMContentLoaded", function() {
   goDownElements.forEach(function(el) {
     el.addEventListener('click', function(e) {
       e.preventDefault();
-      var contentTop = document.getElementById('content').getBoundingClientRect().top;
-      console.log(contentTop);
+      const contentTop = document.getElementById('content').getBoundingClientRect().top;
+      // console.log(contentTop);
       scrollTo(elToScroll, contentTop, 500);
     }, false);
   });
@@ -267,10 +253,10 @@ document.addEventListener("DOMContentLoaded", function() {
       var elToScroll = (IS_FIREFOX || IS_CHROME_61 && IS_CHROME_61 >= 61)
         ? document.getElementsByTagName('html')[0]
         : document.body
-      myWorksContentTop = myWorksContentTop
-        ? myWorksContentTop
+      projectsContentTop = projectsContentTop
+        ? projectsContentTop
         : document.getElementById('portfolio').getBoundingClientRect().top;
-      scrollTo(elToScroll, myWorksContentTop, 500);
+      scrollTo(elToScroll, projectsContentTop, 500);
     }, false);
   })()
 
@@ -291,14 +277,14 @@ document.addEventListener("DOMContentLoaded", function() {
   (function() {
     var cnt = 0;
     var sentences = [
-      "Zen of glorious Python.",
+      "Zen of Python.",
       "Expressive Nim language.",
-      "Handcrafted Tasty Designs.",
-      "Progressive and accessive Apps.",
-      "Bulletproof servers & APIs.",
-      "Swarmy Docker Containers.",
-      "Playin' with Neuro Nets.",
-      "Good old vanilla JavaScript."
+      "Handcrafted Designs.",
+      "Progressive and Accessive Apps.",
+      "Bulletproof Servers & APIs.",
+      "Deep Neuro Nets.",
+      "Good old vanilla JavaScript.",
+      "Modern TypeScript."
     ];
 
     var str;
@@ -307,9 +293,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function type() {
       text = str.slice(0, i++);
-
-      // console.log(text, str);
-
       document.getElementById('created-item-text').innerText = text;
       text.slice();
 
@@ -318,7 +301,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return
       };
 
-      setTimeout(type, 80);
+      setTimeout(type, 100);
     }
 
     setInterval(function() {
@@ -344,5 +327,3 @@ document.addEventListener("DOMContentLoaded", function() {
   })();
 
 });
-
-// Executions block
