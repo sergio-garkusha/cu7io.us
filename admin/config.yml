@@ -1,8 +1,8 @@
 backend:
   name: git-gateway
-  branch: promin
+  branch: promin-cms
 
-site_url: http://[::]:8000
+site_url: https://cu7io.us
 
 publish_mode: editorial_workflow
 media_folder: assets/uploads
@@ -14,7 +14,7 @@ collections: # A list of collections the CMS should be able to edit
     description: >
       The description is a great place for tone setting, high level information, and editing
       guidelines that are specific to a collection.
-    folder: 'screens'
+    folder: 'cms/screens'
     slug: '{{slug}}'
     summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
     create: true # Allow users to create new documents in this collection
