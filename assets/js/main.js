@@ -1,8 +1,11 @@
 // Vanilla JavaScript (helps to deepen knowledge and learn to appreciate frameworks more :)
 // Dated code with modern modifications
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const IS_FIREFOX = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+  const IS_SAFARI = navigator.userAgent.toLowerCase().indexOf('safari') > -1;
   const IS_CHROME_61 = getChromeVersion()
+
+  console.log(navigator.userAgent.toLowerCase());
 
   let scrolling = false;
   let lastScroll;
@@ -52,29 +55,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // works section {
   function worksCloseActions() {
-    setTimeout(function() {
+    setTimeout(function () {
       cLeft.classList.remove('show');
       cRight.classList.remove('show');
     }, 500);
 
-    setTimeout(function() {
+    setTimeout(function () {
       workDetails.style.visibility = 'hidden';
       workDetails.style.opacity = '0';
     }, 600);
 
-    setTimeout(function() {
+    setTimeout(function () {
       workDetails.style.display = 'none';
       document.body.style.overflow = 'initial';
     }, 1200);
   }
 
-  closeX.addEventListener("click", function(e) {
+  closeX.addEventListener("click", function (e) {
     worksCloseActions();
   }, true);
-  workDetails.addEventListener("click", function(e) {
+  workDetails.addEventListener("click", function (e) {
     worksCloseActions();
   }, true);
-  document.addEventListener('keyup', function(e) {
+  document.addEventListener('keyup', function (e) {
     if (e.keyCode === 27) {
       worksCloseActions();
     }
@@ -116,10 +119,12 @@ document.addEventListener("DOMContentLoaded", function() {
   function scrollTo(element, to, duration) {
     if (duration <= 0) return;
 
+    console.log("scrollTo");
+
     var difference = to - element.scrollTop;
     var perTick = difference / duration * 10;
 
-    setTimeout(function() {
+    setTimeout(function () {
       element.scrollTop = element.scrollTop + perTick;
       if (element.scrollTop === to) return;
       scrollTo(element, to, duration - 10);
@@ -135,13 +140,13 @@ document.addEventListener("DOMContentLoaded", function() {
   //
   // Code was taken from here:
   // https://stackoverflow.com/questions/4900436/how-to-detect-the-installed-chrome-version#answer-4900484
-  function getChromeVersion () {
+  function getChromeVersion() {
     var raw = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
     return raw ? parseInt(raw[2], 10) : false;
   }
   // Utils END
 
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', function () {
 
     if (scrolling === false) {
       fade();
@@ -149,14 +154,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     scrolling = true;
 
-    setTimeout(function() {
+    setTimeout(function () {
       scrolling = false;
       fade();
     }, 0);
   });
 
   // Executions block
-  heroTitle.style.minHeight = (heroTitle.childNodes[1].offsetHeight + 100) + 'px';
+  heroTitle.style.minHeight = (heroTitle.childNodes[1].offsetHeight + 140) + 'px';
 
   setHeight(header);
 
@@ -165,8 +170,8 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   let projectsContentTop;
-  window.addEventListener("resize", function() {
-    setTimeout(function() {
+  window.addEventListener("resize", function () {
+    setTimeout(function () {
       setHeight(header);
       projectsContentTop = null;
     }, 200);
@@ -175,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const FOOTER_APPEARS = 400;
   const FOOTER_HEIGHT = 80;
   let height;
-  window.addEventListener("scroll", function() {
+  window.addEventListener("scroll", function () {
     const position = window.scrollY;
     height = document.body.scrollHeight - document.body.offsetHeight;
 
@@ -188,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function() {
         footer.classList.add('footer-closed');
       }
 
-      setTimeout(function() {
+      setTimeout(function () {
         menuAbout.style.display = 'none';
         menuHome.style.display = 'block';
 
@@ -201,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
           }
 
-          setTimeout(function() {
+          setTimeout(function () {
             counter = 1;
           }, 800);
         }
@@ -211,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // upscroll code
       footerLogo.style.opacity = '0';
 
-      setTimeout(function() {
+      setTimeout(function () {
 
         footer.classList.remove('footer-closed');
 
@@ -225,19 +230,19 @@ document.addEventListener("DOMContentLoaded", function() {
       }, 100);
     }
 
-    setTimeout(function() {
+    setTimeout(function () {
       lastScrollTop = position;
     }, 810);
   });
 
   // Animate Scrolling to content on click on the elements
   let goDownElements = document.getElementsByClassName('go-down-event');
-  var elToScroll = (IS_FIREFOX || IS_CHROME_61 && IS_CHROME_61 >= 61)
+  var elToScroll = (IS_FIREFOX || IS_SAFARI || IS_CHROME_61 && IS_CHROME_61 >= 61)
     ? document.getElementsByTagName('html')[0]
     : document.body
   goDownElements = Array.prototype.slice.call(goDownElements);
-  goDownElements.forEach(function(el) {
-    el.addEventListener('click', function(e) {
+  goDownElements.forEach(function (el) {
+    el.addEventListener('click', function (e) {
       e.preventDefault();
       const contentTop = document.getElementById('content').getBoundingClientRect().top;
       // console.log(contentTop);
@@ -246,11 +251,11 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // Animate Scrolling to content on click on the elements
-  (function() {
+  (function () {
     var toWorks = document.getElementById('menu-works');
-    toWorks.addEventListener('click', function(e) {
+    toWorks.addEventListener('click', function (e) {
       e.preventDefault();
-      var elToScroll = (IS_FIREFOX || IS_CHROME_61 && IS_CHROME_61 >= 61)
+      var elToScroll = (IS_FIREFOX || IS_SAFARI || IS_CHROME_61 && IS_CHROME_61 >= 61)
         ? document.getElementsByTagName('html')[0]
         : document.body
       projectsContentTop = projectsContentTop
@@ -262,30 +267,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Animate Scrolling to top on click on the elements
   var goUpElements = document.getElementsByClassName('go-up-event');
-  var elToScroll = (IS_FIREFOX || IS_CHROME_61 && IS_CHROME_61 >= 61)
+  var elToScroll = (IS_FIREFOX || IS_SAFARI || IS_CHROME_61 && IS_CHROME_61 >= 61)
     ? document.getElementsByTagName('html')[0]
     : document.body
   goUpElements = Array.prototype.slice.call(goUpElements);
-  goUpElements.forEach(function(el) {
-    el.addEventListener('click', function(e) {
+  goUpElements.forEach(function (el) {
+    el.addEventListener('click', function (e) {
       e.preventDefault();
       scrollTo(elToScroll, 0, 1000);
     }, false);
   });
 
   // Typewriter feature
-  (function() {
+  const sentences = [
+    "Zen of Python.",
+    "Handcrafted Designs.",
+    "Progressive Apps.",
+    "Modern TypeScript.",
+    "Vanilla JavaScript."
+  ];
+
+  (function () {
     var cnt = 0;
-    var sentences = [
-      "Zen of Python.",
-      "Expressive Nim language.",
-      "Handcrafted Designs.",
-      "Progressive and Accessive Apps.",
-      "Bulletproof Servers & APIs.",
-      "Deep Neuro Nets.",
-      "Good old vanilla JavaScript.",
-      "Modern TypeScript."
-    ];
 
     var str;
     var i = 1;
@@ -304,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function() {
       setTimeout(type, 100);
     }
 
-    setInterval(function() {
+    setInterval(function () {
       if (cnt === sentences.length) {
         cnt = 0;
       }
@@ -320,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function() {
       window.dispatchEvent(evt);
     }, 5000)
 
-    window.addEventListener('type-header-text', function(e) {
+    window.addEventListener('type-header-text', function (e) {
       str = e.detail.sentence;
       type();
     }, false);

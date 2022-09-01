@@ -6,12 +6,13 @@
     2. Change icon file to .png
     3. Double check grammar
 -->
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
 
-  <title>CU7IOUS :: Full Stack Engineer.</title>
+  <title>CU7IOUS :: Software Engineer :: Front-End &amp; Full Stack Web</title>
 
   <link rel="stylesheet" href="./assets/css/style.css" type="text/css" media="all">
   <link rel="stylesheet" href="./assets/css/gumby.css" type="text/css" media="screen">
@@ -38,19 +39,28 @@
   </script>
 
   <div class="container">
-
     <div class="sticky-logo-wrapper">
-      <nav class="row">
+
+      <p id="supportukraine">
+        <span class="hide-mobscreens">Support Ukraine </span>
+        🇺🇦&nbsp;
+        <a target="_blank" href="https://www.supportukraine.co/">
+          Help to buy protective gear for Ukrainian Fighters
+        </a>
+      </p>
+
+      <nav class="row logo-nav-descscreens">
         <div id="logo" class="clearfix">
           <h1 id="logo-large-screens" class="logo-text">
             <a href="/" title="Cu7io.us">Cu7ious</a>
           </h1>
         </div>
       </nav>
+
     </div>
 
     <section id="header">
-      <img id="headerImage" src="assets/images/scene.jpeg" alt="Header background image">
+      <!-- <img id="headerImage" src="assets/images/scene.jpeg" alt="Header background image"> -->
       <div class="header-inner-wrapper">
 
         <div id="hero-title">
@@ -63,7 +73,8 @@
               <br>
               <span id="created-item-text">Good old vanilla JavaScript.</span>
             </h1>
-            <a target="_blank" href="https://cu7ious.medium.com/">Check out my blog posts »</a>
+            <a target="_blank" href="https://cu7ious.medium.com/">Check out my <span class="hide-mobscreens">blog</span>
+              posts »</a>
           </div>
         </div>
 
@@ -81,9 +92,9 @@
         <div class="container auto-scrolling">
           <div class="twelve columns">
             <h2>
-              500 Startups Batch 20 Alumni,
+              500 Startups Alumni,
               <br />
-              Software Engineer.
+              Software Engineer. Ukrainian 🇺🇦
             </h2>
             <div id="my-pics" class="image photo slides">
               <ul>
@@ -100,7 +111,7 @@
                 <figure>
                   <img src="./assets/svg/Geek.svg" alt="Geek">
                   <figcaption>
-                    I'm the geek<br />who's cu7ious
+                    I'm the geek<br />who's cu7ious<br />about the web
                   </figcaption>
                 </figure>
                 <figure style="bottom: -75px;">
@@ -157,7 +168,7 @@
                 <figure style="bottom: -62px;">
                   <img src="./assets/svg/Vim.svg" alt="Vim">
                   <figcaption>
-                    As well as VIM editor<br />(and mode)
+                    As well as VIM
                   </figcaption>
                 </figure>
                 <figure style="bottom: -200px;">
@@ -207,17 +218,17 @@
           <div id="portfolio" class="row">
             <h2>Significant Projects</h2>
             <div class="portfolio-row row work-item">
-              <div class="six columns">
+              <div class="six columns portfolio-photo">
                 <article class="portfolio-card">
                   <a class="work-read-more" href="#">
                     <img src="./assets/images/Workday.jpg" alt="Workday">
                   </a>
                 </article>
               </div>
-              <div class="six columns">
-                <article class="portfolio-card">
+              <div class="six columns portfolio-caption">
+                <article class="portfolio-card work-item-text">
                   <h2>Workday Extend</h2>
-                  <h3>SDE III (P3)</h3>
+                  <h3>Software Development Engineer III (P3)</h3>
                   <ul>
                     <h6>Key Contributions:</h6>
                     <li>Front End &amp; Cloud Development</li>
@@ -230,8 +241,8 @@
               </div>
             </div>
             <div class="portfolio-row row work-item">
-              <div class="six columns">
-                <article class="portfolio-card">
+              <div class="six columns portfolio-caption">
+                <article class="portfolio-card work-item-text">
                   <h2>SentiSum Dashboard</h2>
                   <h3>Full Stack Lead.</h3>
                   <ul>
@@ -244,7 +255,7 @@
                   </ul>
                 </article>
               </div>
-              <div class="six columns">
+              <div class="six columns portfolio-photo">
                 <article class="portfolio-card">
                   <a class="work-read-more" href="#">
                     <img src="./assets/images/SentiSum.jpg" alt="SentiSum">
@@ -253,15 +264,15 @@
               </div>
             </div>
             <div class="portfolio-row row work-item">
-              <div class="six columns">
+              <div class="six columns portfolio-photo">
                 <article class="portfolio-card">
                   <a class="work-read-more" href="#">
                     <img src="./assets/images/Zentist.jpg" alt="SentiSum">
                   </a>
                 </article>
               </div>
-              <div class="six columns">
-                <article class="portfolio-card">
+              <div class="six columns portfolio-caption">
+                <article class="portfolio-card work-item-text">
                   <h2>Zentist Machine</h2>
                   <h3>Senior Front End.</h3>
                   <ul>
@@ -275,8 +286,8 @@
               </div>
             </div>
             <div class="portfolio-row row work-item">
-              <div class="six columns">
-                <article class="portfolio-card">
+              <div class="six columns portfolio-caption">
+                <article class="portfolio-card work-item-text">
                   <h2>MotoPress Content Editor</h2>
                   <h3>Full Stack Fellow.</h3>
                   <ul>
@@ -288,7 +299,7 @@
                   </ul>
                 </article>
               </div>
-              <div class="six columns">
+              <div class="six columns portfolio-photo">
                 <article class="portfolio-card">
                   <a class="work-read-more" href="#">
                     <img src="./assets/images/MotoPress.jpg" alt="SentiSum">
@@ -308,7 +319,8 @@
             <div class="get-in-touch">
               <h4>Get in touch with me</h4>
               <a target="_blank" href="//linkedin.com/in/sergiigarkusha">LinkedIn</a>
-              <a href="mailto:con&#116;&#97;&#99;t&#64;c&#117;7&#105;o&#46;&#117;&#115;">con&#116;&#97;&#99;t&#64;c&#117;7&#105;o&#46;&#117;&#115;</a>
+              <a
+                href="mailto:con&#116;&#97;&#99;t&#64;c&#117;7&#105;o&#46;&#117;&#115;">con&#116;&#97;&#99;t&#64;c&#117;7&#105;o&#46;&#117;&#115;</a>
               <a target="_blank" href="https://twitter.com/Cu7ious">Twitter</a>
             </div>
           </div>
@@ -337,7 +349,7 @@
         <li class="menu-item"><a target="_blank" href="https://codepen.io/Cu7ious/">CodePen</a></li>
       </ul>
       <p>
-        <span>&copy; 2011 - 2021. Designed &amp; Coded by <a href="//cu7io.us">Cu7ious</a>.</span>
+        <span>&copy; 2011 - 2022. Designed &amp; Coded by <a href="//cu7io.us">Cu7ious</a>.</span>
         <!-- <span>Hosted by <a href="https://m.do.co/c/8b69920853a6" target="_blank">DigitalOcean</a></span> -->
       </p>
     </nav>
@@ -351,8 +363,8 @@
       i['GoogleAnalyticsObject'] = r;
 
       i[r] = i[r] || function () {
-          (i[r].q = i[r].q || []).push(arguments)
-        },
+        (i[r].q = i[r].q || []).push(arguments)
+      },
 
         i[r].l = 1 * new Date();
 
