@@ -3,7 +3,7 @@ body {
 }
 
 .doc-wrapper {
-    width: 1072px;
+    max-width: 1072px;
     margin: 0 auto 0;
     padding: 50px;
 }
@@ -12,6 +12,35 @@ body {
     padding: 50px;
     box-shadow: 0px 2px 24px 1px #ccc;
     background-color: #fff;
+}
+
+.top-wrapper {
+    display: grid;
+    grid-template-columns: 55% 45%;
+}
+
+.top {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.area-6 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.area-4--6 {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.area-2--8 {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.mobile-gap {
+    display: none;
 }
 
 .doc h1 {
@@ -97,18 +126,6 @@ body {
 
 header {
     overflow: hidden;
-}
-
-.top-contacts {
-    padding: 0 40px 0 0;
-}
-
-.top-socials {
-    margin-left: 55px;
-}
-
-.top-socials a {
-    display: inline-block;
 }
 
 .tech-skills-and-achievements,
@@ -210,7 +227,6 @@ header {
 }
 
 .material-buttons ul li.secondary {
-    /* display: none; */
     width: 36px;
     height: 36px;
     border-radius: 36px;
@@ -238,6 +254,37 @@ header {
     left: -140px;
     box-shadow: 0px 2px 3px 0px #00000030;
     line-height: 17px;
+}
+
+@media only screen and (max-width: 850px) {
+    .doc {
+        padding: 25px;
+    }
+
+    .doc-wrapper {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 665px) {
+    .top-wrapper {
+        grid-template:
+            'left-col'
+            'right-col';
+        margin-bottom: 35px;
+    }
+
+    .area-6,
+    .area-4--6 {
+        grid-template:
+            'left-col'
+            'right-col';
+    }
+
+    .mobile-gap {
+        display: block;
+        margin-bottom: 35px;
+    }
 }
 
 @media print {
