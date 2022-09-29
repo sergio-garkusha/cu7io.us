@@ -1362,23 +1362,8 @@ a:hover {
   position: relative;
 }
 
-.slide1 {
-  background: url('../images/CU7IOUS-engineer-with-beard.jpg') no-repeat center;
-  background-size: cover;
-}
-
 .slide2 {
   background: url('../images/Cu7ious-at-Golden-Gate-Bridge-wth-Smile.jpg') no-repeat center;
-  background-size: cover;
-}
-
-.slide3 {
-  background: url('../images/Cu7ious-at-500-Startups-SF.jpg') no-repeat center;
-  background-size: cover;
-}
-
-.slide4 {
-  background: url('../images/CU7IOUS-digital-nomad.jpg') no-repeat center;
   background-size: cover;
 }
 
@@ -1387,80 +1372,11 @@ a:hover {
   position: relative;
 }
 
-/* keyframe #anim_slides */
-@-webkit-keyframes anim_slides {
-  0% {
-    opacity: 0;
-  }
-
-  6% {
-    opacity: 1;
-  }
-
-  24% {
-    opacity: 1;
-  }
-
-  30% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes anim_slides {
-  0% {
-    opacity: 0;
-  }
-
-  6% {
-    opacity: 1;
-  }
-
-  24% {
-    opacity: 1;
-  }
-
-  30% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
 .slides ul li {
-  opacity: 0;
   position: absolute;
   top: 0;
-  /* css3 animation */
-  animation-name: anim_slides;
-  animation-duration: 24.0s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
-  animation-delay: 0;
-  animation-play-state: running;
-  animation-fill-mode: forwards;
   width: 100%;
   height: 475px;
-}
-
-/* css3 delays */
-.slides ul li:nth-child(2) {
-  animation-delay: 6.0s;
-}
-
-.slides ul li:nth-child(3) {
-  animation-delay: 12.0s;
-}
-
-.slides ul li:nth-child(4) {
-  animation-delay: 18.0s;
-  background-size: contain;
 }
 
 #img {

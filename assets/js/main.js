@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const IS_SAFARI = navigator.userAgent.toLowerCase().indexOf('safari') > -1;
   const IS_CHROME_61 = getChromeVersion()
 
-  console.log(navigator.userAgent.toLowerCase());
+  // console.log(navigator.userAgent.toLowerCase());
 
   let scrolling = false;
   let lastScroll;
@@ -279,54 +279,54 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Typewriter feature
-  const sentences = [
-    "Zen of Python.",
-    "Handcrafted Designs.",
-    "Progressive Apps.",
-    "Modern TypeScript.",
-    "Vanilla JavaScript."
-  ];
+  // const sentences = [
+  //   "Zen of Python.",
+  //   "Handcrafted Designs.",
+  //   "Progressive Apps.",
+  //   "Modern TypeScript.",
+  //   "Vanilla JavaScript."
+  // ];
 
-  (function () {
-    var cnt = 0;
+  // (function () {
+  //   var cnt = 0;
 
-    var str;
-    var i = 1;
-    var text;
+  //   var str;
+  //   var i = 1;
+  //   var text;
 
-    function type() {
-      text = str.slice(0, i++);
-      document.getElementById('created-item-text').innerText = text;
-      text.slice();
+  //   function type() {
+  //     text = str.slice(0, i++);
+  //     document.getElementById('created-item-text').innerText = text;
+  //     text.slice();
 
-      if (text === str) {
-        i = 1;
-        return
-      };
+  //     if (text === str) {
+  //       i = 1;
+  //       return
+  //     };
 
-      setTimeout(type, 100);
-    }
+  //     setTimeout(type, 100);
+  //   }
 
-    setInterval(function () {
-      if (cnt === sentences.length) {
-        cnt = 0;
-      }
+  //   setInterval(function () {
+  //     if (cnt === sentences.length) {
+  //       cnt = 0;
+  //     }
 
-      var evt = new CustomEvent('type-header-text', {
-        detail: {
-          sentence: sentences[cnt]
-        }
-      });
+  //     var evt = new CustomEvent('type-header-text', {
+  //       detail: {
+  //         sentence: sentences[cnt]
+  //       }
+  //     });
 
-      cnt++;
+  //     cnt++;
 
-      window.dispatchEvent(evt);
-    }, 5000)
+  //     window.dispatchEvent(evt);
+  //   }, 5000)
 
-    window.addEventListener('type-header-text', function (e) {
-      str = e.detail.sentence;
-      type();
-    }, false);
-  })();
+  //   window.addEventListener('type-header-text', function (e) {
+  //     str = e.detail.sentence;
+  //     type();
+  //   }, false);
+  // })();
 
 });
