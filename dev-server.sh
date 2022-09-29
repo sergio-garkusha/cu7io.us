@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-python3 -m http.server
+IP=`ipconfig getifaddr en0`
+python3 -m http.server --bind "$IP" 8000
